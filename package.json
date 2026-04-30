@@ -1,0 +1,20 @@
+{
+  "name": "telegram-shop-bot",
+  "version": "1.0.0",
+  "description": ".",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "grammy": "^1.42.0",
+    "qrcode": "^1.5.4"
+  }
+}
