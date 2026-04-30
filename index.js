@@ -170,15 +170,7 @@ bot.callbackQuery("nav:oferte", async (ctx) => {
 
   await showScreen(
     ctx,
-`🔜 <b>Angajăm dropperi</b>
-
-📢 Ne extindem comunitatea și în următoarele zile vom pune la dispoziție posibilitatea de angajare.
-
-💼 Oferta de job va fi disponibila in bot curand.
-
-⏳ Vă ținem la curent cu toate detaliile.
-
-⚠️ Vă rugăm să nu folosiți 🆘 SUPPORT pentru întrebări legate de oferte.`,
+    "🔜 <b>Angajăm dropperi</b>\n\n📢 Ne extindem comunitatea și în următoarele zile vom pune la dispoziție posibilitatea de angajare.\n\n💼 Oferta de job va fi disponibila in bot curand.\n\n⏳ Vă ținem la curent cu toate detaliile.\n\n⚠️ Vă rugăm să nu folosiți 🆘 SUPPORT pentru întrebări legate de oferte.",
     {
       inline_keyboard: [
         [{ text: "🏠 Acasă", callback_data: "nav:home" }]
