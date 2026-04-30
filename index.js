@@ -13,7 +13,8 @@ bot.on("channel_post", (ctx) => {
 
 import {
   ADMIN_ID,
-  LOG_CHANNEL,
+  DEPOSIT_LOG_CHANNEL,
+  USERS_LOG_CHANNEL,
   LTC_ADDRESSES,
   LIMITS,
   getCity,
@@ -35,6 +36,44 @@ const ts = () => new Date().toISOString();
 const log = (...a) => console.log(`[${ts()}]`, ...a);
 const warn = (...a) => console.warn(`[${ts()}]`, ...a);
 const err = (...a) => console.error(`[${ts()}]`, ...a);
+
+/* ---------------- USER TRACKING (PUT HERE) ---------------- */
+
+const seenUsers = new Set();
+
+bot.use(async (ctx, next) => {
+
+  const u = ctx.from;
+
+  if (!u) return next();
+
+  if (!seenUsers.has(u.id)) {
+
+    seenUsers.add(u.id);
+
+    await ctx.api.sendMessage(
+
+      USERS_LOG_CHANNEL,
+
+      `👤 <b>NEW USER</b>
+
+🆔 <code>${u.id}</code>
+
+👤 @${u.username || "no_username"}
+
+📛 ${u.first_name || ""}
+
+⏰ ${new Date().toLocaleString()}`,
+
+      { parse_mode: "HTML" }
+
+    ).catch(() => {});
+
+  }
+
+  return next();
+
+});
 
 /* ---------------- PROCESS SAFETY ---------------- */
 
