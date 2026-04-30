@@ -339,16 +339,26 @@ bot.callbackQuery("deposit:ltc", async (ctx) => {
 
 await ctx.api.sendMessage(
   LOG_CHANNEL,
-`💰 DEPOSIT INITIATED
+  `✅ <b>DEPOSIT INITIATED</b>
 
 👤 ${u.username ? "@" + u.username : u.first_name}
-🆔 ${u.id}
+🆔 <code>${u.id}</code>
 
 💵 ${amount} USD
-✅ ${ltcAmount} LTC
+🔢 ${ltcAmount} LTC
 
-🏦 ${address}
-⏰ ${new Date().toISOString()}`
+🏦 <b>${address}</b>
+
+⏰ ${new Date().toLocaleString("en-GB", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  })}
+`,
+  { parse_mode: "HTML" }
 ).catch(() => {});
 
   try {
