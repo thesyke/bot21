@@ -238,10 +238,10 @@ export function paymentCancelled() {
 
 export function depositMethod() {
   return {
-    text: "💳 Alege metoda de plată:",
+    text: "💳 Confirmă depozitul:",
     kb: {
       inline_keyboard: [
-        [{ text: "LTC", callback_data: "deposit:ltc" }],
+        [{ text: "✅ Continuă", callback_data: "deposit:ltc" }],
         [HOME_BTN]
       ]
     }
