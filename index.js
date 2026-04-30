@@ -270,8 +270,6 @@ bot.callbackQuery("pay:cancel", async (ctx) => {
   await showScreen(ctx, text, kb);
 });
 
-/* ---------------- DEPOSIT ---------------- */
-
 bot.callbackQuery("nav:deposit", async (ctx) => {
   const session = getSession(ctx.from.id);
   resetFlow(session);
@@ -281,10 +279,31 @@ bot.callbackQuery("nav:deposit", async (ctx) => {
 
 bot.callbackQuery("deposit:ltc", async (ctx) => {
   const session = getSession(ctx.from.id);
-  session.mode = "deposit_amount";
-  const { text, kb } = ui.depositAmountPrompt();
-  await showScreen(ctx, text, kb);
-});
+  const amount = Math.max(
+    LIMITS.depositMin,
+    Math.min(LIMITS.depositMax, Math.round(session.balance || LIMITS.depositMin))
+  );
+  session.mode = "idle";
+  const ltcPrice = getLTCPrice();
+  const ltcAmount = (amount / ltcPrice).toFixed(6);
+  const address = getRandomAddress();
+
+  try {
+    const qrPng = await makeQrPng(address);
+    await ctx.replyWithPhoto(new InputFile(qrPng, "ltc.png"), {
+      parse_mode: "HTML",
+      caption:
+`<b>Detalii plată LTC:</b>
+
+<code>${address}</code>
+<b>${ltcAmount} LTC</b> (~${amount} USD)
+
+⏳ Ai 60 minute pentru a trimite suma.`
+    });
+  } catch (e) {
+    err(`Deposit QR send failed (user=${ctx.from.id}):`, e?.description || e);
+    return ctx.reply("❌ Nu am putut genera detaliile de plată. Încearcă din nou.");
+  }
 
 /* ---------------- SUPPORT ---------------- */
 
@@ -346,62 +365,6 @@ bot.on("message", async (ctx) => {
   if (ctx.message.text && ctx.message.text.startsWith("/")) return;
 
   const session = getSession(ctx.from.id);
-
-  /* ---- DEPOSIT AMOUNT INPUT ---- */
-  if (session.mode === "deposit_amount") {
-    if (!ctx.message.text) {
-      return ctx.reply("❌ Trimite o sumă ca text.");
-    }
-    const raw = ctx.message.text.trim();
-    if (raw.length > 10) {
-      return ctx.reply("❌ Sumă invalidă.");
-    }
-    const amount = Number(raw);
-    if (
-      !Number.isFinite(amount) ||
-      amount < LIMITS.depositMin ||
-      amount > LIMITS.depositMax
-    ) {
-      return ctx.reply(
-        `❌ Suma trebuie să fie între ${LIMITS.depositMin} și ${LIMITS.depositMax} USD.`
-      );
-    }
-
-    // Lock the mode immediately so a second message can't double-fire.
-    session.mode = "idle";
-
-    const ltcPrice = getLTCPrice();
-    const ltcAmount = (amount / ltcPrice).toFixed(6);
-    const address = getRandomAddress();
-
-    try {
-      const qrPng = await makeQrPng(address);
-      await ctx.replyWithPhoto(new InputFile(qrPng, "ltc.png"), {
-        parse_mode: "HTML",
-        caption:
-`<b>Detalii plată LTC:</b>
-
-<code>${address}</code>
-<b>${ltcAmount} LTC</b> (~${amount} USD)
-
-⏳ Ai 60 minute pentru a trimite suma.`
-      });
-    } catch (e) {
-      err(`Deposit QR send failed (user=${ctx.from.id}):`, e?.description || e);
-      return ctx.reply(
-        "❌ Nu am putut genera detaliile de plată. Încearcă din nou."
-      );
-    }
-
-    log(`DEPOSIT user=${ctx.from.id} amount=${amount} ltc=${ltcAmount} addr=${address}`);
-
-    // The QR is at the bottom of the chat. Delete the old menu (which
-    // sat above) and post a fresh confirmation BELOW the QR so buttons
-    // and any /start reply are always visible at the bottom.
-    await detachMenu(ctx);
-    const { text, kb } = ui.depositSubmitted(amount);
-    return showScreen(ctx, text, kb);
-  }
 
   /* ---- SUPPORT INPUT ---- */
   if (session.mode === "support_input") {
