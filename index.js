@@ -102,33 +102,6 @@ async function makeQrPng(text) {
   });
 }
 
-/* ---------------- CALLBACK MIDDLEWARE ---------------- */
-
-bot.on("callback_query:data", async (ctx, next) => {
-  log(`BUTTON user=${ctx.from.id} data=${ctx.callbackQuery.data}`);
-
-  await ctx.answerCallbackQuery().catch(() => {});
-
-  const session = getSession(ctx.from.id);
-
-  if (tooFast(session)) {
-    log(`DEBOUNCED user=${ctx.from.id}`);
-    return;
-  }
-
-  if (session.busy) {
-    log(`BUSY user=${ctx.from.id}`);
-    return;
-  }
-
-  session.busy = true;
-
-  try {
-    await next();
-  } finally {
-    session.busy = false;
-  }
-});
 /* ---------------- GLOBAL CALLBACK MIDDLEWARE ---------------- */
 /* - Always ack so Telegram removes the spinner.
    - Debounce rapid-fire clicks per user.
