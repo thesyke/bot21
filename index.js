@@ -640,8 +640,8 @@ async function startBotForever() {
 console.log("MIDDLEWARE STACK:", bot.middleware?.length || "unknown");
 
 async function boot() {
-  await startBotForever();
-  await notifyUser();
+  await notifyUser();        // 👈 runs first
+  await startBotForever();   // 👈 then bot runs forever
 }
 
 boot();
