@@ -537,4 +537,9 @@ async function startBotForever() {
   }
 }
 
+console.log(
+  "LISTENERS (callback_query:data):",
+  bot.listenerCount("callback_query:data")
+);
+
 startBotForever();
