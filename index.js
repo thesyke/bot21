@@ -273,12 +273,19 @@ bot.callbackQuery("pay:cancel", async (ctx) => {
 bot.callbackQuery("deposit:ltc", async (ctx) => {
   const session = getSession(ctx.from.id);
 
+  // If the user has a pending order, charge them the missing amount
+  // (price - current balance). Otherwise fall back to the minimum so
+  // the flow is never blocked.
+  const { city, productId, quantity } = session.selection || {};
+  const orderPrice = getPrice(city, productId, quantity);
+  const target =
+    typeof orderPrice === "number" && orderPrice > 0
+      ? orderPrice - (session.balance || 0)
+      : LIMITS.depositMin;
+
   const amount = Math.max(
     LIMITS.depositMin,
-    Math.min(
-      LIMITS.depositMax,
-      Math.round(session.balance || LIMITS.depositMin)
-    )
+    Math.min(LIMITS.depositMax, Math.ceil(target))
   );
 
   session.mode = "idle";
