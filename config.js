@@ -16,16 +16,17 @@ export const CATALOG = {
     label: "Ploiești",
     enabled: true,
     products: {
-      wd: { label: "verde", prices: { 5: 60, 10: 111 } },
-      cx: { label: "cx", prices: { 1: 110, 2: 200 } }
+      wd: { label: "verde", prices: { 5: 60, 10: 113 } },
+      cx: { label: "cx", prices: { 1: 110, 2: 190 } }
     }
   },
   iasi: {
     label: "Iași",
     enabled: true,
     products: {
-      wd: { label: "verde", prices: { 5: 60, 10: 111 } },
-      cx: { label: "cx", prices: { 1: 110, 2: 200 } }
+      wd: { label: "verde", prices: { 10: 113 } },
+      cx: { label: "cx", prices: { 1: 110, 2: 190 } },
+      cris: { label: "cris", prices: { 2: 90, 5: 181} }
     }
   },
   buzau: {
