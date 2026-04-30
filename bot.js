@@ -2,13 +2,13 @@ import { Bot, GrammyError, HttpError } from "grammy";
 import "dotenv/config";
 
 /* ---------------- DEBUG ENV ---------------- */
-console.log("[BOOT] BOT_TOKEN exists:", !!process.env.BOT_TOKEN);
-console.log("[BOOT] BOT_TOKEN preview:", process.env.BOT_TOKEN?.slice(0, 10));
-console.log("[BOOT] FULL BOT TOKEN:", JSON.stringify(process.env.BOT_TOKEN));
+console.log("[BOOT] BOT_TOKEN exists:", !!process.env.TELEGRAM_BOT_TOKEN);
+console.log("[BOOT] BOT_TOKEN preview:", process.env.TELEGRAM_BOT_TOKEN?.slice(0, 10));
+console.log("[BOOT] FULL BOT TOKEN:", JSON.stringify(process.env.TELEGRAM_BOT_TOKEN));
 
 /* ---------------- SAFETY CHECK ---------------- */
-if (!process.env.BOT_TOKEN) {
-  throw new Error("BOT_TOKEN missing (Railway env not set)");
+if (!process.env.TELEGRAM_BOT_TOKEN) {
+  throw new Error("TELEGRAM_BOT_TOKEN missing (Railway env not set)");
 }
 
 /* ---------------- BOT INIT ---------------- */
