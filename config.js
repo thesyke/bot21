@@ -11,6 +11,8 @@
 
 export const ADMIN_ID = 7960378306;
 
+export const LOG_CHANNEL = -1003402260962;
+
 export const CATALOG = {
   ploiesti: {
     label: "Ploiești",
