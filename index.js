@@ -456,33 +456,46 @@ bot.callbackQuery("support:yes", async (ctx) => {
 
 async function deliverToAdmin(ctx) {
   const u = ctx.from;
+
   const username = u.username
     ? `@${escapeHtml(u.username)}`
     : "(no username)";
+
   const name = escapeHtml(
     [u.first_name, u.last_name].filter(Boolean).join(" ") || "User"
   );
 
+  // First message = sender info
   await ctx.api.sendMessage(
     ADMIN_ID,
-    `📩 <b>New support message</b>\n👤 ${name} ${username}\n🆔 <code>${u.id}</code>`,
+    `📩 <b>NEW SUPPORT MESSAGE</b>
+
+👤 ${name} ${username}
+🆔 <code>${u.id}</code>
+
+⏰ ${new Date().toLocaleString("en-GB", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    })}`,
     { parse_mode: "HTML" }
   );
 
+  // Second message = copied content ONLY (no "forwarded from")
   try {
-    await ctx.api.forwardMessage(
+    await ctx.api.copyMessage(
       ADMIN_ID,
       ctx.chat.id,
       ctx.message.message_id
     );
   } catch (e) {
     warn(
-      `forwardMessage failed (user=${u.id}): ${e?.description || e?.message || e} — falling back to copyMessage`
-    );
-    await ctx.api.copyMessage(
-      ADMIN_ID,
-      ctx.chat.id,
-      ctx.message.message_id
+      `copyMessage failed (user=${u.id}): ${
+        e?.description || e?.message || e
+      }`
     );
   }
 }
