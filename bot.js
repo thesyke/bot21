@@ -12,7 +12,7 @@ if (!process.env.TELEGRAM_BOT_TOKEN) {
 }
 
 /* ---------------- BOT INIT ---------------- */
-export const bot = new Bot(process.env.BOT_TOKEN);
+export const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN);
 
 /* ---------------- ERROR HANDLER ---------------- */
 bot.catch((err) => {
