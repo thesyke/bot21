@@ -11,12 +11,12 @@ if (!process.env.TELEGRAM_BOT_TOKEN) {
   throw new Error("TELEGRAM_BOT_TOKEN missing (Railway env not set)");
 }
 
+/* ---------------- BOT INIT ---------------- */
+export const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN);
+
 bot.on("message", (ctx) => {
   console.log("CHAT ID:", ctx.chat.id);
 });
-
-/* ---------------- BOT INIT ---------------- */
-export const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN);
 
 /* ---------------- ERROR HANDLER ---------------- */
 bot.catch((err) => {
