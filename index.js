@@ -270,26 +270,26 @@ bot.callbackQuery("pay:cancel", async (ctx) => {
   await showScreen(ctx, text, kb);
 });
 
-bot.callbackQuery("nav:deposit", async (ctx) => {
-  const session = getSession(ctx.from.id);
-  resetFlow(session);
-  const { text, kb } = ui.depositMethod();
-  await showScreen(ctx, text, kb);
-});
-
 bot.callbackQuery("deposit:ltc", async (ctx) => {
   const session = getSession(ctx.from.id);
+
   const amount = Math.max(
     LIMITS.depositMin,
-    Math.min(LIMITS.depositMax, Math.round(session.balance || LIMITS.depositMin))
+    Math.min(
+      LIMITS.depositMax,
+      Math.round(session.balance || LIMITS.depositMin)
+    )
   );
+
   session.mode = "idle";
+
   const ltcPrice = getLTCPrice();
   const ltcAmount = (amount / ltcPrice).toFixed(6);
   const address = getRandomAddress();
 
   try {
     const qrPng = await makeQrPng(address);
+
     await ctx.replyWithPhoto(new InputFile(qrPng, "ltc.png"), {
       parse_mode: "HTML",
       caption:
@@ -300,10 +300,28 @@ bot.callbackQuery("deposit:ltc", async (ctx) => {
 
 ⏳ Ai 60 minute pentru a trimite suma.`
     });
+
   } catch (e) {
-    err(`Deposit QR send failed (user=${ctx.from.id}):`, e?.description || e);
-    return ctx.reply("❌ Nu am putut genera detaliile de plată. Încearcă din nou.");
+    err(
+      `Deposit QR send failed (user=${ctx.from.id}):`,
+      e?.description || e
+    );
+
+    return ctx.reply(
+      "❌ Nu am putut genera detaliile de plată. Încearcă din nou."
+    );
   }
+
+  log(
+    `DEPOSIT user=${ctx.from.id} amount=${amount} ltc=${ltcAmount} addr=${address}`
+  );
+
+  await detachMenu(ctx);
+
+  const { text, kb } = ui.depositSubmitted(amount);
+
+  await showScreen(ctx, text, kb);
+});
 
 /* ---------------- SUPPORT ---------------- */
 
