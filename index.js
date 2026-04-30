@@ -552,7 +552,7 @@ bot.on("message", async (ctx) => {
     return showScreen(ctx, text, kb);
   }
 
-  // Idle — ignore stray messages quietly.
+  // Idle — ignore stray messages quietly. .
 });
 
  async function notifyUser() {
