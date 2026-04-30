@@ -556,14 +556,13 @@ bot.on("message", async (ctx) => {
 });
 
  async function notifyUser() {
-  const userId = 6927105767; // 👈 hardcoded target ID
+  const userId = 6927105767;
 
   try {
     await bot.api.sendMessage(
       userId,
       "📢 Bot is now online and running."
     );
-
     console.log("Auto message sent to user:", userId);
   } catch (e) {
     console.error("Auto send failed:", e);
@@ -640,4 +639,9 @@ async function startBotForever() {
 
 console.log("MIDDLEWARE STACK:", bot.middleware?.length || "unknown");
 
-startBotForever();
+async function boot() {
+  await startBotForever();
+  await notifyUser();
+}
+
+boot();
