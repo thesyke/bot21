@@ -20,8 +20,7 @@ export function home() {
       inline_keyboard: [
         [{ text: "👤 Profil", callback_data: "nav:profile" }],
         [{ text: "🛒 Comandă", callback_data: "nav:city" }],
-        [
-          { text: "📦 Depozit", callback_data: "nav:deposit" },
+        [  
           { text: "📜 Reguli", callback_data: "nav:rules" }
         ],
         [
