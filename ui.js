@@ -24,6 +24,7 @@ export function home() {
           { text: "📜 Reguli", callback_data: "nav:rules" }
         ],
         [
+          { text: "❗️ Oferte de munca", callback_data: "nav:oferte" },
           { text: "⭐ Recenzii", callback_data: "nav:reviews" },
           { text: "🆘 SUPPORT", callback_data: "nav:support" }
         ]
