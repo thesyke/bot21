@@ -81,15 +81,21 @@ export const LIMITS = {
 export const REVIEWS = [
      {
      stars: 5,
-     text:  "Drop perfect, coordonate exacte. Recomand!",
-     date:  "29.04.2026",
+     text:  "top",
+     date:  "15.04.2026",
      time:  "18:14"
    },
      {
      stars: 5,
-     text:  "Drop perfect, coordonate exacte. Recomand!",
-     date:  "29.04.2026",
-     time:  "18:14"
+     text:  "bun wdul",
+     date:  "18.04.2026",
+     time:  "02:41"
+   },
+   {
+     stars: 4,
+     text:  "cogox bun, locatia cam aiurea m-a vazut un mosneag cum sapam:))))",
+     date:  "18.04.2026",
+     time:  "11:21"
    }
 
 ];
