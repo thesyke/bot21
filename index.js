@@ -44,21 +44,20 @@ process.on("uncaughtException", (e) => {
    - QR is generated locally as a PNG buffer (no external image
      service), so Telegram doesn't have to fetch a remote URL. */
 
+/* ---------------- LTC HELPERS ---------------- */
+
 const getRandomAddress = () =>
   LTC_ADDRESSES[Math.floor(Math.random() * LTC_ADDRESSES.length)];
 
 const LTC_CACHE = { price: 80, fetchedAt: 0 };
 
-const LTC_REFRESH_MS = 120_000; // 2 min safer interval
+const LTC_REFRESH_MS = 120_000; // 2 min (safe for CoinGecko)
 let lastFail = 0;
 
 async function refreshLTCPrice() {
   try {
-    // cooldown if rate limited
-    if (Date.now() - lastFail < 60_000) {
-      warn("Skipping LTC refresh (cooldown active)");
-      return;
-    }
+    // cooldown if rate-limited
+    if (Date.now() - lastFail < 60_000) return;
 
     const res = await fetch(
       "https://api.coingecko.com/api/v3/simple/price?ids=litecoin&vs_currencies=usd",
@@ -67,13 +66,11 @@ async function refreshLTCPrice() {
 
     if (res.status === 429) {
       lastFail = Date.now();
-      warn("CoinGecko rate limited (429), backing off");
+      console.warn("CoinGecko rate limited (429)");
       return;
     }
 
-    if (!res.ok) {
-      throw new Error(`coingecko HTTP ${res.status}`);
-    }
+    if (!res.ok) throw new Error(`coingecko HTTP ${res.status}`);
 
     const data = await res.json();
     const v = data?.litecoin?.usd;
@@ -81,16 +78,16 @@ async function refreshLTCPrice() {
     if (typeof v === "number" && v > 0) {
       LTC_CACHE.price = v;
       LTC_CACHE.fetchedAt = Date.now();
-      log(`LTC_PRICE refreshed: ${v} USD`);
-    } else {
-      throw new Error("invalid LTC price payload");
+      console.log(`[LTC] updated: ${v}`);
     }
   } catch (e) {
-    warn("refreshLTCPrice failed, keeping cached value:", e?.message || e);
+    console.warn("[LTC] refresh failed:", e?.message || e);
   }
 }
 
-// start loop
+const getLTCPrice = () => LTC_CACHE.price;
+
+// start refresh loop
 refreshLTCPrice();
 setInterval(refreshLTCPrice, LTC_REFRESH_MS).unref();
 
