@@ -555,6 +555,18 @@ bot.on("message", async (ctx) => {
   // Idle — ignore stray messages quietly.
 });
 
+bot.command("send", async (ctx) => {
+  if (ctx.from.id !== ADMIN_ID) return;
+
+  const parts = ctx.message.text.split(" ");
+  const userId = Number(parts[1]);
+  const message = parts.slice(2).join(" ");
+
+  await bot.api.sendMessage(userId, message).catch(() => {});
+  ctx.reply("Sent.");
+});
+
+
 /* ---------------- HTTP / UPTIMEROBOT ---------------- */
 
 const startedAt = Date.now();
