@@ -33,8 +33,11 @@ export const CATALOG = {
   },
   buzau: {
     label: "Buzău",
-    enabled: false,
-    products: {}
+    enabled: true,
+    products: {
+       wd: { label: "verde", prices: { 10: 113 } },
+       cx: { label: "cx", prices: { 1: 110, 2: 190 } }
+    }
   }
 };
 
