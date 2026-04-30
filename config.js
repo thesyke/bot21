@@ -108,6 +108,48 @@ export const REVIEWS = [
      text:  "calitate, scz am uitat sa las review",
      date:  "20.04.2026",
      time:  "23:04"
+   },
+   {
+     stars: 5,
+     text:  "blanao, baga cris mancatias pl",
+     date:  "21.04.2026",
+     time:  "16:22"
+   },
+   {
+     stars: 4,
+     text:  "ingropat cam adanc in rest ok",
+     date:  "24.04.2026",
+     time:  "11:08"
+   },
+   {
+     stars: 5,
+     text:  "totul ok",
+     date:  "25.04.2026",
+     time:  "17:37"
+   },
+   {
+     stars: 5,
+     text:  "am venit cu trenul, baga si pe suceava cris",
+     date:  "25.04.2026",
+     time:  "20:19"
+   },
+   {
+     stars: 5,
+     text:  "topix",
+     date:  "28.04.2026",
+     time:  "15:54"
+   },
+   {
+     stars: 5,
+     text:  "focu arata bine il testez acusi",
+     date:  "28.04.2026",
+     time:  "17:28"
+   },
+   {
+     stars: 5,
+     text:  "very gud ⭐️⭐️⭐️⭐️⭐️",
+     date:  "30.04.2026",
+     time:  "07:44"
    }
 
 ];
