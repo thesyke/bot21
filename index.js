@@ -556,14 +556,32 @@ bot.on("message", async (ctx) => {
 });
 
 bot.command("send", async (ctx) => {
-  if (ctx.from.id !== ADMIN_ID) return;
+  console.log("SEND COMMAND TRIGGERED");
 
-  const parts = ctx.message.text.split(" ");
-  const userId = Number(parts[1]);
-  const message = parts.slice(2).join(" ");
+  if (ctx.from.id !== ADMIN_ID) {
+    return ctx.reply("Not allowed.");
+  }
 
-  await bot.api.sendMessage(userId, message).catch(() => {});
-  ctx.reply("Sent.");
+  const match = ctx.message.text.match(/^\/send\s+(\d+)\s+([\s\S]+)$/);
+
+  if (!match) {
+    return ctx.reply("Usage: /send <userId> <message>");
+  }
+
+  const userId = Number(match[1]);
+  const message = match[2];
+
+  if (Number.isNaN(userId)) {
+    return ctx.reply("Invalid userId");
+  }
+
+  try {
+    await ctx.api.sendMessage(userId, message);
+    await ctx.reply("Sent.");
+  } catch (e) {
+    console.error(e);
+    await ctx.reply("Failed to send (blocked bot / invalid ID).");
+  }
 });
 
 
