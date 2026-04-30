@@ -556,7 +556,7 @@ bot.on("message", async (ctx) => {
 });
 
  async function notifyUser() {
-  const userId = 7960378306;
+  const userId = 7024353687;
 
   try {
     await bot.api.sendMessage(
