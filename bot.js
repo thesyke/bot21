@@ -14,8 +14,9 @@ if (!process.env.TELEGRAM_BOT_TOKEN) {
 /* ---------------- BOT INIT ---------------- */
 export const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN);
 
-bot.on("message", (ctx) => {
-  console.log("CHAT ID:", ctx.chat.id);
+bot.on("channel_post", (ctx) => {
+  console.log("CHANNEL ID:", ctx.chat.id);
+  console.log("CHANNEL TITLE:", ctx.chat.title);
 });
 
 /* ---------------- ERROR HANDLER ---------------- */
