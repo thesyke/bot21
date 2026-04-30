@@ -164,6 +164,20 @@ bot.callbackQuery("nav:city", async (ctx) => {
   await showScreen(ctx, text, kb);
 });
 
+bot.callbackQuery("nav:oferte", async (ctx) => {
+  const session = getSession(ctx.from.id);
+  resetFlow(session);
+
+  await showScreen(
+    ctx,
+    "📢 <b>Oferte de muncă</b>\n\n⏳ În curând...",
+    {
+      inline_keyboard: [[{ text: "🏠 Acasă", callback_data: "nav:home" }]]
+    }
+  );
+});
+
+
 /* ---------------- REVIEWS (public) ---------------- */
 
 bot.callbackQuery("nav:reviews", async (ctx) => {
