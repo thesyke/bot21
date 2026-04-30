@@ -6,6 +6,7 @@ import "dotenv/config";
 import { bot } from "./bot.js";
 import {
   ADMIN_ID,
+  LOG_CHANNEL,
   LTC_ADDRESSES,
   LIMITS,
   getCity,
