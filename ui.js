@@ -17,19 +17,21 @@ export function home() {
   return {
     text: "📍 <b>Meniu principal</b>\n\nAlege o opțiune:",
     kb: {
-      inline_keyboard: [
-        [{ text: "👤 Profil", callback_data: "nav:profile" }],
-        [{ text: "🛒 Comandă", callback_data: "nav:city" }],
-        [  
-          { text: "📜 Reguli", callback_data: "nav:rules" }
-        ],
-        [
-          { text: "❗️ Oferte de munca", callback_data: "nav:oferte" },
-          { text: "⭐ Recenzii", callback_data: "nav:reviews" },
-          { text: "🆘 SUPPORT", callback_data: "nav:support" }
-        ]
-      ]
-    }
+  inline_keyboard: [
+    [{ text: "👤 Profil", callback_data: "nav:profile" }],
+    [{ text: "🛒 Comandă", callback_data: "nav:city" }],
+    [{ text: "📜 Reguli", callback_data: "nav:rules" }],
+
+    [
+      { text: "❗️ Oferte de muncă", callback_data: "nav:oferte" }
+    ],
+
+    [
+      { text: "⭐ Recenzii", callback_data: "nav:reviews" },
+      { text: "🆘 SUPPORT", callback_data: "nav:support" }
+    ]
+  ]
+}
   };
 }
 
