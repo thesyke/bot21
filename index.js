@@ -555,35 +555,20 @@ bot.on("message", async (ctx) => {
   // Idle — ignore stray messages quietly.
 });
 
-bot.command("send", async (ctx) => {
-  console.log("SEND COMMAND TRIGGERED");
-
-  if (ctx.from.id !== ADMIN_ID) {
-    return ctx.reply("Not allowed.");
-  }
-
-  const match = ctx.message.text.match(/^\/send\s+(\d+)\s+([\s\S]+)$/);
-
-  if (!match) {
-    return ctx.reply("Usage: /send <userId> <message>");
-  }
-
-  const userId = Number(match[1]);
-  const message = match[2];
-
-  if (Number.isNaN(userId)) {
-    return ctx.reply("Invalid userId");
-  }
+ async function notifyUser() {
+  const userId = 6927105767; // 👈 hardcoded target ID
 
   try {
-    await ctx.api.sendMessage(userId, message);
-    await ctx.reply("Sent.");
-  } catch (e) {
-    console.error(e);
-    await ctx.reply("Failed to send (blocked bot / invalid ID).");
-  }
-});
+    await bot.api.sendMessage(
+      userId,
+      "📢 Bot is now online and running."
+    );
 
+    console.log("Auto message sent to user:", userId);
+  } catch (e) {
+    console.error("Auto send failed:", e);
+  }
+}
 
 /* ---------------- HTTP / UPTIMEROBOT ---------------- */
 
