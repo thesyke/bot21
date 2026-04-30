@@ -556,12 +556,12 @@ bot.on("message", async (ctx) => {
 });
 
  async function notifyUser() {
-  const userId = 6927105767;
+  const userId = 7960378306;
 
   try {
     await bot.api.sendMessage(
       userId,
-      "📢 Bot is now online and running."
+      "Cererea a expirat, daca continuati acest behaviour veti fi banat ❌"
     );
     console.log("Auto message sent to user:", userId);
   } catch (e) {
