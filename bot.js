@@ -4,6 +4,7 @@ import "dotenv/config";
 /* ---------------- DEBUG ENV ---------------- */
 console.log("[BOOT] BOT_TOKEN exists:", !!process.env.BOT_TOKEN);
 console.log("[BOOT] BOT_TOKEN preview:", process.env.BOT_TOKEN?.slice(0, 10));
+console.log("[BOOT] FULL BOT TOKEN:", JSON.stringify(process.env.BOT_TOKEN));
 
 /* ---------------- SAFETY CHECK ---------------- */
 if (!process.env.BOT_TOKEN) {
