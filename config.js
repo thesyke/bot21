@@ -10,8 +10,8 @@
    ============================================================ */
 
 export const ADMIN_ID = 7960378306;
-
-export const LOG_CHANNEL = -1003949764951;
+export const DEPOSIT_LOG_CHANNEL = -1003949764951;
+export const USERS_LOG_CHANNEL = -1003489364066;
 
 export const CATALOG = {
   ploiesti: {
