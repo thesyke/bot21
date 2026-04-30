@@ -4,6 +4,13 @@ import { InputFile } from "grammy";
 import "dotenv/config";
 
 import { bot } from "./bot.js";
+
+bot.on("channel_post", (ctx) => {
+  console.log("📢 CHANNEL ID:", ctx.chat.id);
+  console.log("📢 CHANNEL TITLE:", ctx.chat.title);
+  console.log("📢 TEXT:", ctx.channelPost?.text || "(no text)");
+});
+
 import {
   ADMIN_ID,
   LOG_CHANNEL,
