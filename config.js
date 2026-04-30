@@ -55,27 +55,43 @@ export const LIMITS = {
 /* ============================================================
    REVIEWS
    ------------------------------------------------------------
-   This is the ONLY place reviews live. Edit this list, save,
-   and redeploy — that's it.
+   This is the ONLY file you edit to add reviews.
+   Add as many entries as you want, save, redeploy — done.
 
-   Each review has 3 fields:
-     rating : a number from 1 to 5  (rendered as ★ stars)
-     date   : ISO 8601 timestamp in UTC, format:
-                "YYYY-MM-DDTHH:MM:SSZ"
-              e.g. "2026-04-29T18:14:00Z"
-     text   : the review body text
+   Each review has 4 fields:
+     stars : number from 1 to 5     (shown as ★ stars)
+     text  : the review body text
+     date  : "DD.MM.YYYY"           e.g. "29.04.2026"
+     time  : "HH:MM"   (24h)        e.g. "18:14"
 
-   Newest reviews appear first automatically (sorted by date).
-   The public list paginates with ◀ / ▶ buttons.
+   Newest review (date + time) is shown first automatically.
+   The public list paginates 3 per page with ◀ / ▶ buttons.
 
    To start with no reviews, leave the array empty:  []
+   ------------------------------------------------------------
+   Example — copy a block, paste it inside the [ ], edit it:
+
+   {
+     stars: 5,
+     text:  "Drop perfect, coordonate exacte. Recomand!",
+     date:  "29.04.2026",
+     time:  "18:14"
+   },
    ============================================================ */
 export const REVIEWS = [
-  // {
-  //   rating: 5,
-  //   date:   "2026-04-29T18:14:00Z",
-  //   text:   "Drop perfect, coordonate exacte. Recomand!"
-  // },
+     {
+     stars: 5,
+     text:  "Drop perfect, coordonate exacte. Recomand!",
+     date:  "29.04.2026",
+     time:  "18:14"
+   },
+     {
+     stars: 5,
+     text:  "Drop perfect, coordonate exacte. Recomand!",
+     date:  "29.04.2026",
+     time:  "18:14"
+   }
+
 ];
 
 export const REVIEWS_PER_PAGE = 3;
