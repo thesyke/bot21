@@ -28,35 +28,32 @@ const log = (...a) => console.log(`[${ts()}]`, ...a);
 const warn = (...a) => console.warn(`[${ts()}]`, ...a);
 const err = (...a) => console.error(`[${ts()}]`, ...a);
 
-/* ---------------- PROCESS-LEVEL SAFETY NET ---------------- */
+/* ---------------- PROCESS SAFETY ---------------- */
+
 process.on("unhandledRejection", (reason) => {
   err("UnhandledRejection:", reason);
 });
+
 process.on("uncaughtException", (e) => {
   err("UncaughtException:", e);
 });
-
-/* ---------------- LTC HELPERS ---------------- */
-/* Strategy for instant UX:
-   - LTC price is kept warm by a background refresher (every 60s).
-   - getLTCPrice() is sync: it always returns the cached value,
-     so the deposit handler never blocks on an external API.
-   - QR is generated locally as a PNG buffer (no external image
-     service), so Telegram doesn't have to fetch a remote URL. */
 
 /* ---------------- LTC HELPERS ---------------- */
 
 const getRandomAddress = () =>
   LTC_ADDRESSES[Math.floor(Math.random() * LTC_ADDRESSES.length)];
 
-const LTC_CACHE = { price: 80, fetchedAt: 0 };
+const LTC_CACHE = {
+  price: 80,
+  fetchedAt: 0
+};
 
-const LTC_REFRESH_MS = 120_000; // 2 min (safe for CoinGecko)
+const LTC_REFRESH_MS = 120_000;
 let lastFail = 0;
 
 async function refreshLTCPrice() {
   try {
-    // cooldown if rate-limited
+    // cooldown after rate limit
     if (Date.now() - lastFail < 60_000) return;
 
     const res = await fetch(
@@ -66,30 +63,36 @@ async function refreshLTCPrice() {
 
     if (res.status === 429) {
       lastFail = Date.now();
-      console.warn("CoinGecko rate limited (429)");
+      warn("CoinGecko rate limited (429), backing off");
       return;
     }
 
-    if (!res.ok) throw new Error(`coingecko HTTP ${res.status}`);
+    if (!res.ok) {
+      throw new Error(`CoinGecko HTTP ${res.status}`);
+    }
 
     const data = await res.json();
-    const v = data?.litecoin?.usd;
+    const price = data?.litecoin?.usd;
 
-    if (typeof v === "number" && v > 0) {
-      LTC_CACHE.price = v;
+    if (typeof price === "number" && price > 0) {
+      LTC_CACHE.price = price;
       LTC_CACHE.fetchedAt = Date.now();
-      console.log(`[LTC] updated: ${v}`);
+      log(`[LTC] updated: ${price} USD`);
+    } else {
+      throw new Error("Invalid price response");
     }
   } catch (e) {
-    console.warn("[LTC] refresh failed:", e?.message || e);
+    warn("[LTC] refresh failed:", e?.message || e);
   }
 }
 
 const getLTCPrice = () => LTC_CACHE.price;
 
-// start refresh loop
+/* start background refresh */
 refreshLTCPrice();
 setInterval(refreshLTCPrice, LTC_REFRESH_MS).unref();
+
+/* ---------------- QR ---------------- */
 
 async function makeQrPng(text) {
   return QRCode.toBuffer(text, {
@@ -99,6 +102,33 @@ async function makeQrPng(text) {
   });
 }
 
+/* ---------------- CALLBACK MIDDLEWARE ---------------- */
+
+bot.on("callback_query:data", async (ctx, next) => {
+  log(`BUTTON user=${ctx.from.id} data=${ctx.callbackQuery.data}`);
+
+  await ctx.answerCallbackQuery().catch(() => {});
+
+  const session = getSession(ctx.from.id);
+
+  if (tooFast(session)) {
+    log(`DEBOUNCED user=${ctx.from.id}`);
+    return;
+  }
+
+  if (session.busy) {
+    log(`BUSY user=${ctx.from.id}`);
+    return;
+  }
+
+  session.busy = true;
+
+  try {
+    await next();
+  } finally {
+    session.busy = false;
+  }
+});
 /* ---------------- GLOBAL CALLBACK MIDDLEWARE ---------------- */
 /* - Always ack so Telegram removes the spinner.
    - Debounce rapid-fire clicks per user.
