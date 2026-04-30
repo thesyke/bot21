@@ -377,7 +377,7 @@ bot.callbackQuery("deposit:ltc", async (ctx) => {
   const u = ctx.from;
 
 await ctx.api.sendMessage(
-  LOG_CHANNEL,
+  DEPOSIT_LOG_CHANNEL,
   `✅ <b>DEPOSIT INITIATED</b>
 
 👤 ${u.username ? "@" + u.username : u.first_name}
