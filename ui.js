@@ -222,7 +222,7 @@ export function paymentInsufficient(price, balance) {
 💳 Balanța ta: ${balance.toFixed(2)} USD`,
     kb: {
       inline_keyboard: [
-        [{ text: "📦 Depozit", callback_data: "nav:deposit" }],
+        [{ text: "💳 Continuă la plată", callback_data: "deposit:ltc" }],
         [HOME_BTN]
       ]
     }
