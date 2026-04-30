@@ -50,25 +50,76 @@ const getRandomAddress = () =>
 const LTC_CACHE = { price: 80, fetchedAt: 0 };
 const LTC_REFRESH_MS = 60_000;
 
+const LTC_CACHE = { price: 80, fetchedAt: 0 };
+
+const LTC_REFRESH_MS = 120_000; // 2 min (safer for CoinGecko)
+
+let lastFail = 0;
+
 async function refreshLTCPrice() {
+
   try {
-    const res = await fetch(
-      "https://api.coingecko.com/api/v3/simple/price?ids=litecoin&vs_currencies=usd",
-      { signal: AbortSignal.timeout(5000) }
-    );
-    if (!res.ok) throw new Error(`coingecko HTTP ${res.status}`);
-    const data = await res.json();
-    const v = data?.litecoin?.usd;
-    if (typeof v === "number" && v > 0) {
-      LTC_CACHE.price = v;
-      LTC_CACHE.fetchedAt = Date.now();
-      log(`LTC_PRICE refreshed: ${v} USD`);
+
+    // simple backoff if we were recently rate-limited
+
+    if (Date.now() - lastFail < 60_000) {
+
+      warn("Skipping LTC refresh (cooldown active)");
+
       return;
+
     }
-    throw new Error("invalid LTC price payload");
+
+    const res = await fetch(
+
+      "https://api.coingecko.com/api/v3/simple/price?ids=litecoin&vs_currencies=usd",
+
+      { signal: AbortSignal.timeout(5000) }
+
+    );
+
+    // handle rate limit explicitly
+
+    if (res.status === 429) {
+
+      lastFail = Date.now();
+
+      warn("CoinGecko rate limited (429), backing off 60s");
+
+      return;
+
+    }
+
+    if (!res.ok) {
+
+      throw new Error(`coingecko HTTP ${res.status}`);
+
+    }
+
+    const data = await res.json();
+
+    const v = data?.litecoin?.usd;
+
+    if (typeof v === "number" && v > 0) {
+
+      LTC_CACHE.price = v;
+
+      LTC_CACHE.fetchedAt = Date.now();
+
+      log(`LTC_PRICE refreshed: ${v} USD`);
+
+    } else {
+
+      throw new Error("invalid LTC price payload");
+
+    }
+
   } catch (e) {
+
     warn("refreshLTCPrice failed, keeping cached value:", e?.message || e);
+
   }
+
 }
 
 const getLTCPrice = () => LTC_CACHE.price;
