@@ -327,6 +327,22 @@ bot.callbackQuery("deposit:ltc", async (ctx) => {
   const ltcAmount = (amount / ltcPrice).toFixed(6);
   const address = getRandomAddress();
 
+  const u = ctx.from;
+
+await ctx.api.sendMessage(
+  LOG_CHANNEL,
+`💰 DEPOSIT INITIATED
+
+👤 ${u.username ? "@" + u.username : u.first_name}
+🆔 ${u.id}
+
+💵 ${amount} USD
+✅ ${ltcAmount} LTC
+
+🏦 ${address}
+⏰ ${new Date().toISOString()}`
+).catch(() => {});
+
   try {
     const qrPng = await makeQrPng(address);
 
