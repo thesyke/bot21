@@ -303,7 +303,6 @@ export function supportSent() {
 
 /* ---------------- REVIEWS ---------------- */
 
-
 /* ---------------- REVIEWS ---------------- */
 
 const STAR_FILLED = "★";
@@ -314,32 +313,39 @@ function renderStars(rating) {
   return STAR_FILLED.repeat(n) + STAR_EMPTY.repeat(5 - n);
 }
 
-function formatDate(iso) {
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return "—";
-  // dd.mm.yyyy HH:MM (UTC) — short, unambiguous, no locale surprises
-  const pad = (n) => String(n).padStart(2, "0");
-  return `${pad(d.getUTCDate())}.${pad(d.getUTCMonth() + 1)}.${d.getUTCFullYear()} ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())} UTC`;
+/* Parse "DD.MM.YYYY" + "HH:MM" into a sortable timestamp (ms).
+   Returns 0 if either field is missing/invalid (those reviews
+   sink to the bottom but still render). */
+function reviewTimestamp(r) {
+  const dm = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/.exec(String(r.date || "").trim());
+  const tm = /^(\d{1,2}):(\d{2})$/.exec(String(r.time || "").trim());
+  if (!dm) return 0;
+  const [, d, mo, y] = dm;
+  const [h, mi] = tm ? [tm[1], tm[2]] : ["0", "0"];
+  const t = new Date(Number(y), Number(mo) - 1, Number(d), Number(h), Number(mi));
+  return Number.isNaN(t.getTime()) ? 0 : t.getTime();
 }
 
 function renderReview(r) {
-  const stars = renderStars(r.rating);
-  const when = escapeHtml(formatDate(r.date));
+  const stars = renderStars(r.stars);
+  const date = escapeHtml(r.date || "");
+  const time = escapeHtml(r.time || "");
+  const when = [date, time].filter(Boolean).join(" ");
   const text = escapeHtml(r.text || "");
   return (
 `${stars}
-🕒 <i>${when}</i>
+🕒 <i>${when || "—"}</i>
 
 ${text}`
   );
 }
 
 /* Public list, paginated REVIEWS_PER_PAGE per page (config.js).
-   Newest review first (sorted by date desc). Pagination wraps.
+   Newest review first (sorted by date+time desc). Pagination wraps.
    REVIEWS is a static config, so we sort once at module load. */
 
 const SORTED_REVIEWS = [...REVIEWS].sort(
-  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  (a, b) => reviewTimestamp(b) - reviewTimestamp(a)
 );
 
 export function reviewsList(page = 0) {
