@@ -96,6 +96,18 @@ export const REVIEWS = [
      text:  "cogox bun, locatia cam aiurea m-a vazut un mosneag cum sapam:))))",
      date:  "18.04.2026",
      time:  "11:21"
+   },
+   {
+      stars: 5,
+      text:  "👍🏻",
+      date: "20.04.2026",
+      time: "21:38"
+   },
+   {
+     stars: 5,
+     text:  "calitate, scz am uitat sa las review",
+     date:  "20.04.2026",
+     time:  "23:04"
    }
 
 ];
