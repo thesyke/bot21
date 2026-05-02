@@ -555,17 +555,32 @@ bot.on("message", async (ctx) => {
   // Idle — ignore stray messages quietly. .
 });
 
- async function notifyUser() {
-  const userId = 6927105767;
+async function notifyUsers() {
+  const userIds = [
+    6927105767,
+    8028112064,
+    1700076915,
+    7024353687,
+    1328038638,
+    7960378306,
+    8092127741
+  ];
 
-  try {
-    await bot.api.sendMessage(
-      userId,
-      "Bot online✅"
-    );
-    console.log("Auto message sent to user:", userId);
-  } catch (e) {
-    console.error("Auto send failed:", e);
+  const message = `Restock verde:
+
+IASI ON✅
+BUZAU ON✅
+TIMISOARA ON✅
+
+cris x1 🔜`;
+
+  for (const userId of userIds) {
+    try {
+      await bot.api.sendMessage(userId, message);
+      console.log("Auto message sent to user:", userId);
+    } catch (e) {
+      console.error(`Auto send failed for ${userId}:`, e);
+    }
   }
 }
 
@@ -640,7 +655,7 @@ async function startBotForever() {
 console.log("MIDDLEWARE STACK:", bot.middleware?.length || "unknown");
 
 async function boot() {
-  await notifyUser();        // 👈 runs first
+  await notifyUsers();        // 👈 runs first
   await startBotForever();   // 👈 then bot runs forever
 }
 
