@@ -48,7 +48,11 @@ export const LTC_ADDRESSES = [
   "ltc1qu3vf9zreklst2nwrk0r56d63cnf9zw9qg8u232",
   "ltc1qtux9ys4ueay24f8x5ukt3dy2d8v70y68kxwfhg",
   "ltc1qu5pehgw00c8qhfayezz9jmylsm9he96tz0ydw8",
-  "ltc1qj4puy2cecqhr6pm0azqnuzxpagqupgaetae6sl"
+  "ltc1qj4puy2cecqhr6pm0azqnuzxpagqupgaetae6sl",
+  "ltc1qv7mwpu0dk6zsy0tgzy886e6pffzxvmg9hwz0ua",
+   "ltc1qer0gz4umjseqzjsl7s7sjhcvqs84nawq5ky2lx",
+   "ltc1qrsfw4mahtu3zfnyeze4k2wntdz6cg9zkrz092h",
+   "ltc1q4m0ncdq077aqag8nnfcv37y2aedn8y3q6eu63h"
 ];
 
 export const LIMITS = {
