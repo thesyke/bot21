@@ -99,7 +99,7 @@ export const REVIEWS = [
    },
    {
      stars: 4,
-     text:  "cogox bun, locatia cam aiurea m-a vazut un mosneag cum sapam:))))",
+     text:  "cogox bun locatia cam aiurea m-a vazut un mosneag cum sapam:))))",
      date:  "18.04.2026",
      time:  "11:21"
    },
@@ -111,13 +111,13 @@ export const REVIEWS = [
    },
    {
      stars: 5,
-     text:  "calitate, scz am uitat sa las review",
+     text:  "scz am uitat sa las review",
      date:  "20.04.2026",
      time:  "23:04"
    },
    {
      stars: 5,
-     text:  "blanao, baga cris mancatias pl",
+     text:  "blanao. baga cris mancatias pl",
      date:  "21.04.2026",
      time:  "16:22"
    },
@@ -165,13 +165,13 @@ export const REVIEWS = [
    },
    {
      stars: 5,
-     text:  "Gasit, mai pune cx pe bz 🙏🏻",
+     text:  "Gasit.Mai pune cx pe bz 🙏🏻",
      date:  "31.04.2026",
      time:  "17:25"
    },
    {
-     stars: 5,
-     text:  "top, ar fi smecher sa poti alege zona ca l am primit in pacurari=)))",
+     stars: 4,
+     text:  "top da ar fi smecher sa poti alege zona ca l am primit in pacurari=)))",
      date:  "01.05.2026",
      time:  "23:39"
    }
