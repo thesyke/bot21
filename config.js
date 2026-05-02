@@ -37,7 +37,23 @@ export const CATALOG = {
     products: {
        wd: { label: "verde", prices: { 10: 113 } },
        cris: { label: "cris", prices: { 5: 181 } }
+    },
+   timisoara: {
+    label: "Timișoara",
+    enabled: true,
+    products: {
+       wd: { label: "verde", prices: { 10: 113 } },
+       cx: { label: "cz", prices: { 2: 110 } },
+       cris: { label: "cris", prices: { 2: 90, 5: 181 } }
+    },
+   bucuresti: {
+    label: "Bucureşti",
+    enabled: true,
+    products: {
+       wd: { label: "verde", prices: {5: 60, 10: 113 } },
+       cris: { label: "cris", prices: { 5: 181 } }
     }
+     
   }
 };
 
