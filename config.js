@@ -36,7 +36,6 @@ export const CATALOG = {
     enabled: true,
     products: {
        wd: { label: "verde", prices: { 10: 113 } },
-       cx: { label: "cx", prices: { 1: 110 } },
        cris: { label: "cris", prices: { 5: 181 } }
     }
   }
@@ -137,7 +136,7 @@ export const REVIEWS = [
    {
      stars: 5,
      text:  "am venit cu trenul, baga si pe suceava cris",
-     date:  "25.04.2026",
+     date:  "27.04.2026",
      time:  "20:19"
    },
    {
@@ -157,6 +156,18 @@ export const REVIEWS = [
      text:  "very gud ⭐️⭐️⭐️⭐️⭐️",
      date:  "30.04.2026",
      time:  "07:44"
+   },
+   {
+     stars: 5,
+     text:  "bines pe caf",
+     date:  "31.04.2026",
+     time:  "21:03"
+   },
+   {
+     stars: 5,
+     text:  "Gasit, mai pune cx pe bz 🙏🏻",
+     date:  "31.04.2026",
+     time:  "22:17"
    }
 
 ];
