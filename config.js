@@ -161,13 +161,19 @@ export const REVIEWS = [
      stars: 5,
      text:  "bines pe caf",
      date:  "31.04.2026",
-     time:  "21:03"
+     time:  "11:03"
    },
    {
      stars: 5,
      text:  "Gasit, mai pune cx pe bz 🙏🏻",
      date:  "31.04.2026",
-     time:  "22:17"
+     time:  "17:25"
+   },
+   {
+     stars: 5,
+     text:  "top, ar fi smecher sa poti alege zona ca l am primit in pacurari=)))",
+     date:  "01.05.2026",
+     time:  "23:39"
    }
 
 ];
