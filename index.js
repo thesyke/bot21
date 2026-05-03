@@ -557,8 +557,7 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-    6927105767,
-    8092127741
+    6927105767 
   ];
 
   const message = `Bot Is On✅`;
