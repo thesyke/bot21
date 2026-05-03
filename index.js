@@ -558,21 +558,10 @@ bot.on("message", async (ctx) => {
 async function notifyUsers() {
   const userIds = [
     6927105767,
-    8028112064,
-    1700076915,
-    7024353687,
-    1328038638,
-    7960378306,
     8092127741
   ];
 
-  const message = `Restock verde:
-
-IASI ON✅
-BUZAU ON✅
-TIMISOARA ON✅
-
-cris x1 🔜`;
+  const message = `Bot Is On✅`;
 
   for (const userId of userIds) {
     try {
