@@ -188,13 +188,13 @@ export const REVIEWS = [
    {
      stars: 5,
      text:  "Gasit.Mai pune cx pe bz 🙏🏻",
-     date:  "31.04.2026",
+     date:  "01.05.2026",
      time:  "17:25"
    },
    {
      stars: 5,
      text:  "TOP",
-     date:  "01.05.2026",
+     date:  "03.05.2026",
      time:  "14:21"
    },
    {
