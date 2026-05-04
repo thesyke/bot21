@@ -192,10 +192,22 @@ export const REVIEWS = [
      time:  "17:25"
    },
    {
-     stars: 4,
-     text:  "top da ar fi smecher sa poti alege zona ca l am primit in pacurari=)))",
+     stars: 5,
+     text:  "TOP",
      date:  "01.05.2026",
-     time:  "23:39"
+     time:  "14:21"
+   },
+   {
+     stars: 5,
+     text:  "Când mai bagi 1 de cr pe buc?",
+     date:  "04.05.2026",
+     time:  "08:56"
+   },
+   {
+     stars: 5,
+     text:  "w tare dai mostre cxx?",
+     date:  "04.05.2026",
+     time:  "13:38"
    }
 
 ];
