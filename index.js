@@ -557,10 +557,11 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-    6927105767 
+    6927105767,
+    6676546656
   ];
 
-  const message = `Bot Is On✅`;
+  const message = `Cererea a expirat. Daca continuati acest behaviour va vom bloca ❌ IN CAZUL IN CARE ATI PLATIT SI VA ESTE AFISAT ACEST MESAJ VA RUGAM CONTACTATI 🆘 SUPPORT`;
 
   for (const userId of userIds) {
     try {
