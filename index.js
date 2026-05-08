@@ -557,11 +557,10 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-    6927105767,
-    6676546656
+    6927105767
   ];
 
-  const message = `Cererea a expirat. Daca continuati acest behaviour va vom bloca ❌ IN CAZUL IN CARE ATI PLATIT SI VA ESTE AFISAT ACEST MESAJ VA RUGAM CONTACTATI 🆘 SUPPORT`;
+  const message = `RESTOCK IASI ✅ BUZAU ✅ cris`;
 
   for (const userId of userIds) {
     try {
