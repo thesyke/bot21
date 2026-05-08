@@ -208,8 +208,14 @@ export const REVIEWS = [
      text:  "w tare dai mostre cxx?",
      date:  "04.05.2026",
      time:  "13:38"
+   },
+   {
+      stars: 5,
+      text:  "Ba vere e bun",
+      date: "08.05.2026",
+      time: "06:41"
    }
-
+   
 ];
 
 export const REVIEWS_PER_PAGE = 3;
