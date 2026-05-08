@@ -557,10 +557,35 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-    6927105767
+    6927105767, //shining
+    6608058244, //moileg
+    6962849748, //mobcrr
+    7454217325, //sanmarco
+    8287424494, //mandy
+    8667705237, //mahone
+    5487212409, //dranon
+    7692900467, //focatragatoare
+    5037773256, //parak
+    6496795633, //mihaila
+    6676546656, //beleauaiti
+    8200720981, //jmailais
+    7239547174, //bnbboss
+    6523730049, //matei
+    5946828698, //crybenzo
+    8701306445, //ombladon
+    8664816766, //shining
+    7024353687, //margiela
+    8028112064, //nasicu
+    1700076915, //ioan
+    7960378306
   ];
 
-  const message = `RESTOCK IASI ✅ BUZAU ✅ cris`;
+  const message = `cris x 1 ON ✅ TOATE ORASELE
+  CLUJ ON ✅
+  New batch verde💚 + smaller prices
+
+  🔜 cioko
+  `;
 
   for (const userId of userIds) {
     try {
