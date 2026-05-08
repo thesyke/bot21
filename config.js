@@ -18,7 +18,7 @@ export const CATALOG = {
     label: "Ploiești",
     enabled: true,
     products: {
-      wd: { label: "verde", prices: { 5: 60, 10: 113 } },
+      wd: { label: "verde", prices: { 5: 55, 10: 110 } },
       cx: { label: "cx", prices: { 2: 190 } }
     }
   },
@@ -26,36 +26,42 @@ export const CATALOG = {
     label: "Iași",
     enabled: true,
     products: {
-      wd: { label: "verde", prices: { 5: 60, 10: 113 } },
-      cx: { label: "cx", prices: { 1: 110 } }, 
-      cris: { label: "cris", prices: { 2: 90, 5: 181 } }
+      wd: { label: "verde", prices: { 5: 55 } },
+      cris: { label: "cris", prices: { 1: 45, 2: 90, 5: 181 } }
     }
   },
   buzau: {
     label: "Buzău",
     enabled: true,
     products: {
-       wd: { label: "verde", prices: {5: 60, 10: 113 } },
-       cris: { label: "cris", prices: { 5: 181 } }
+       wd: { label: "verde", prices: {5: 55, 10: 110 } },
+       cris: { label: "cris", prices: {1: 45, 2: 90, 5: 181 } }
     }
     },
    timisoara: {
     label: "Timișoara",
     enabled: true,
     products: {
-       wd: { label: "verde", prices: { 5: 60, 10: 113 } },
-       cx: { label: "cx", prices: { 2: 110 } },
-       cris: { label: "cris", prices: { 2: 90 } }
+       wd: { label: "verde", prices: { 5: 55 } },
+       cx: { label: "cx", prices: { 1: 110, 2: 190 } },
+       cris: { label: "cris", prices: { 1: 45, 2: 90 } }
     }
     },
    bucuresti: {
     label: "Bucureşti",
     enabled: true,
     products: {
-       wd: { label: "verde", prices: {5: 60, 10: 113 } },
-       cris: { label: "cris", prices: { 5: 181 } }
+       wd: { label: "verde", prices: { 5: 55, 10: 110 } },
+       cris: { label: "cris", prices: { 1: 45, 2: 90, 5: 181 } }
+    },
+      cluj: {
+    label: "Cluj",
+    enabled: true,
+    products: {
+       wd: { label: "verde", prices: { 5: 55, 10: 110 } },
+       cris: { label: "cris", prices: { 1: 45, 2: 90, 5: 181 } }
     }
-     
+    
   }
 };
 
