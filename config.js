@@ -240,6 +240,12 @@ export const REVIEWS = [
      text:  "THE BEST BUZAU🥰",
      date:  "09.05.2026",
      time:  "05:19"
+   },
+   {
+     stars: 5,
+     text:  "talent. da cr pe ploiesti:(?",
+     date:  "09.05.2026",
+     time:  "11:17"
    }
    
 ];
