@@ -246,6 +246,18 @@ export const REVIEWS = [
      text:  "talent. da cr pe ploiesti:(?",
      date:  "09.05.2026",
      time:  "11:17"
+   },
+   {
+     stars: 5,
+     text:  "🥶🥶🥶🥶",
+     date:  "09.05.2026",
+     time:  "18:48"
+   },
+   {
+     stars: 5,
+     text:  "Mai Angajezi? facem treaba crdma",
+     date:  "09.05.2026",
+     time:  "20:03"
    }
    
 ];
