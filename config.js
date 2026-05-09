@@ -27,6 +27,7 @@ export const CATALOG = {
     enabled: true,
     products: {
       wd: { label: "verde", prices: { 5: 55 } },
+      cx: { label: "cx", prices: { 1: 110 } },
       cris: { label: "cris", prices: { 1: 45, 2: 90, 5: 181 } }
     }
   },
@@ -52,7 +53,7 @@ export const CATALOG = {
     enabled: true,
     products: {
        wd: { label: "verde", prices: { 5: 55, 10: 110 } },
-       cris: { label: "cris", prices: { 1: 45, 2: 90, 5: 181 } }
+       cris: { label: "cris", prices: { 1: 45, 2: 90 } }
     }
     },
       cluj: {
@@ -221,6 +222,24 @@ export const REVIEWS = [
       text:  "Ba vere e bun",
       date: "08.05.2026",
       time: "06:41"
+   },
+   {
+     stars: 3,
+     text:  "primul drop nu l-am gasit\n\n🆘SUPPORT: V am evaluat tichetul, verificati balanta din bot",
+     date:  "08.05.2026",
+     time:  "23:29"
+   },
+   {
+     stars: 5,
+     text:  "cristiiiii",
+     date:  "09.05.2026",
+     time:  "02:53"
+   },
+   {
+     stars: 5,
+     text:  "THE BEST BUZAU🥰",
+     date:  "09.05.2026",
+     time:  "05:19"
    }
    
 ];
