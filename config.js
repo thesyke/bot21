@@ -27,8 +27,7 @@ export const CATALOG = {
     enabled: true,
     products: {
       wd: { label: "verde", prices: { 5: 55, 10: 110 } },
-      cx: { label: "cx", prices: { 1: 110 } },
-      cris: { label: "cris", prices: { 1: 45, 2: 90 } }
+      cris: { label: "cris", prices: { 1: 45 } }
     }
   },
   buzau: {
@@ -52,7 +51,7 @@ export const CATALOG = {
     label: "Bucureşti",
     enabled: true,
     products: {
-       wd: { label: "verde", prices: { 5: 55, 10: 110 } },
+       wd: { label: "verde", prices: { 5: 55 } },
        cris: { label: "cris", prices: { 1: 45, 2: 90 } }
     }
     },
@@ -258,6 +257,18 @@ export const REVIEWS = [
      text:  "Mai Angajezi? facem treaba crdma",
      date:  "09.05.2026",
      time:  "20:03"
+   },
+   {
+     stars: 5,
+     text:  "M-amprajit",
+     date:  "11.05.2026",
+     time:  "10:47"
+   }, 
+   {
+     stars: 5,
+     text:  "legit recomand 🌳🌳",
+     date:  "11.05.2026",
+     time:  "15:06"
    }
    
 ];
