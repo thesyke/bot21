@@ -557,10 +557,11 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-    7024353687 //margiela  
+    7024353687,
+    6927105767  
   ];
 
-  const message = `Soldul dvs a fost reincarcat dar a aparut o eroare la cumpararea produsului. Va rugam contactati 🆘SUPPORT cat mai repede posibil. ID comanda: #513592`;
+  const message = `🆘SUPPORT: Am primit mesajele dvs. Am actualizat produsele, 1cr nu mai era disponibil, ci doar 2/5. Daca doresti refund foloseste butonul 🆘SUPPORT si trimite mesaj. In cazul in care doriti sa achizitionati 2cr si balanta este 0, asteptati 5 minute si trimiteti doar 45usd la adresa care apare dupa ce comandati. Ne cerem scuze❗️`;
 
   for (const userId of userIds) {
     try {
