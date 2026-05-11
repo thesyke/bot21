@@ -561,7 +561,7 @@ async function notifyUsers() {
     6927105767  
   ];
 
-  const message = `🆘SUPPORT: Am primit mesajele dvs. Am actualizat produsele, 1cr nu mai era disponibil, ci doar 2/5. Daca doresti refund foloseste butonul 🆘SUPPORT si trimite mesaj. In cazul in care doriti sa achizitionati 2cr si balanta este 0, asteptati 5 minute si trimiteti doar 45usd la adresa care apare dupa ce comandati. Ne cerem scuze❗️`;
+  const message = `🆘SUPPORT: Servus, observ ca primesc multe mesaje de la mai multe conturi in privire cu comanda dvs. V-am rugat sa aveti rabdare sa primiti refund, de asemenea aveti grija la limbaj noi nu suntem pusti❗️❗️❗️`;
 
   for (const userId of userIds) {
     try {
