@@ -27,7 +27,7 @@ export const CATALOG = {
     enabled: true,
     products: {
       wd: { label: "verde", prices: { 5: 55, 10: 110 } },
-      cris: { label: "cris", prices: { 1: 45 } }
+      cris: { label: "cris", prices: { 2: 90, 5: 181 } }
     }
   },
   buzau: {
