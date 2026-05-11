@@ -557,10 +557,10 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-    6927105767 //shining  
+    7024353687 //margiela  
   ];
 
-  const message = `cris almost sold out 🆘`;
+  const message = `Soldul dvs a fost reincarcat dar a aparut o eroare la cumpararea produsului. Va rugam contactati 🆘SUPPORT cat mai repede posibil. ID comanda: #513592`;
 
   for (const userId of userIds) {
     try {
