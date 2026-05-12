@@ -26,16 +26,16 @@ export const CATALOG = {
     label: "Iași",
     enabled: true,
     products: {
-      wd: { label: "verde", prices: { 5: 55, 10: 110 } },
-      cris: { label: "cris", prices: { 2: 90, 5: 181 } }
+      wd: { label: "verde", prices: { 5: 50 } },
+      cris: { label: "cris", prices: { 1: 45 } }
     }
   },
   buzau: {
     label: "Buzău",
     enabled: true,
     products: {
-       wd: { label: "verde", prices: {5: 55, 10: 110 } },
-       cris: { label: "cris", prices: {1: 45, 2: 90, 5: 181 } }
+       wd: { label: "verde", prices: {5: 50 } },
+       cris: { label: "cris", prices: {1: 45, 2: 90 } }
     }
     },
    timisoara: {
