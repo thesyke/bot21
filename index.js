@@ -557,11 +557,10 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-    7024353687,
     6927105767  
   ];
 
-  const message = `🆘SUPPORT: Servus, observ ca primesc multe mesaje de la mai multe conturi in privire cu comanda dvs. V-am rugat sa aveti rabdare sa primiti refund, de asemenea aveti grija la limbaj noi nu suntem pusti❗️❗️❗️`;
+  const message = `cris ON ✅`
 
   for (const userId of userIds) {
     try {
