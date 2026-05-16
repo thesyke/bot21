@@ -266,11 +266,23 @@ export const REVIEWS = [
    }, 
    {
      stars: 5,
-     text:  "legit recomand 🌳🌳",
-     date:  "11.05.2026",
-     time:  "15:06"
-   }
+     text:  "Legit, ne bagam pula in hateri❤️❗️",
+     date:  "13.05.2026",
+     time:  "16:23"
+   },
    
+   {
+     stars: 5,
+     text:  "nu mi am luat teapa e bine",
+     date:  "13.05.2026",
+     time:  "21:29"
+   },
+   {
+     stars: 5,
+     text:  "miroase top sparge bines🌟",
+     date:  "15.05.2026",
+     time:  "11:58"
+   }   
 ];
 
 export const REVIEWS_PER_PAGE = 3;
