@@ -557,28 +557,10 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-    6927105767,
-    6962849748,//mobcr
-    6608058244,//moileg
-    7239547174,//bnb
-    8200720981,//jmailais
-    8287424494,//
-    7692900467,//crista
-    6362754721,//fulgy
-    7454217325,//sanmarco
-    8701306445,//ciobix
-    6523730049,//matei
-    8667705237,//mahone
-    7043575283,//rbhmanu
-    7860800751,//nu dau un g
-    7692900467,//heiswnberv
-    6496795633,//florin
-    6676546656,//brleaua
-    5037773256//parak
-    
+    6927105767  
   ];
 
-  const message = `IASI, BUZAU ALMOST SOLD OUT❌\n\nVa multumim ca ati ales sa cumparati cu noi❤️, mica reducere pentru ultimele dropuri de 🌳/🧊\n\n✅Revenim cu restock la sfarsitul lunii ❗️`
+  const message = `bot is online✅`
 
   for (const userId of userIds) {
     try {
