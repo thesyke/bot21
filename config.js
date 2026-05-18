@@ -62,7 +62,8 @@ export const CATALOG = {
     products: {
        wd: { label: "verde", prices: { 5: 50, 10: 90 } },
        cris: { label: "cris", prices: { 1: 35, 2: 70 } }
-    },
+    }
+      },
          
       cluj: {
     label: "Cluj",
