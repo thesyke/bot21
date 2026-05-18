@@ -18,7 +18,7 @@ export const CATALOG = {
     label: "Ploiești",
     enabled: true,
     products: {
-      wd: { label: "verde", prices: { 5: 55, 10: 110 } },
+      wd: { label: "verde", prices: { 5: 50, 10: 90 } },
       cx: { label: "cx", prices: { 2: 190 } }
     }
   },
@@ -27,7 +27,7 @@ export const CATALOG = {
     enabled: true,
     products: {
       wd: { label: "verde", prices: { 5: 50 } },
-      cris: { label: "cris", prices: { 1: 45 } }
+      cris: { label: "cris", prices: { 1: 35, 2: 70 } }
     }
   },
   buzau: {
@@ -35,32 +35,41 @@ export const CATALOG = {
     enabled: true,
     products: {
        wd: { label: "verde", prices: {5: 50 } },
-       cris: { label: "cris", prices: {1: 45, 2: 90 } }
+       cris: { label: "cris", prices: {1: 35 } }
     }
     },
    timisoara: {
     label: "Timișoara",
     enabled: true,
     products: {
-       wd: { label: "verde", prices: { 5: 55 } },
-       cx: { label: "cx", prices: { 1: 110, 2: 190 } },
-       cris: { label: "cris", prices: { 1: 45, 2: 90 } }
+       wd: { label: "verde", prices: { 5: 50 } },
+       cx: { label: "cx", prices: { 1: 110 } },
+       cris: { label: "cris", prices: { 1: 35, 2: 70 } }
     }
     },
    bucuresti: {
     label: "Bucureşti",
     enabled: true,
     products: {
-       wd: { label: "verde", prices: { 5: 55 } },
-       cris: { label: "cris", prices: { 1: 45, 2: 90 } }
+       wd: { label: "verde", prices: { 5: 50 } },
+       cris: { label: "cris", prices: { 1: 35, 2: 70 } }
     }
+   },
+    
+      sibiu: {
+    label: "Sibiu",
+    enabled: true,
+    products: {
+       wd: { label: "verde", prices: { 5: 50, 10: 90 } },
+       cris: { label: "cris", prices: { 1: 35, 2: 70 } }
     },
+         
       cluj: {
     label: "Cluj",
     enabled: true,
     products: {
-       wd: { label: "verde", prices: { 5: 55, 10: 110 } },
-       cris: { label: "cris", prices: { 1: 45, 2: 90, 5: 181 } }
+       wd: { label: "verde", prices: { 5: 50, 10: 90 } },
+       cris: { label: "cris", prices: { 1: 35, 2: 70 } }
     }
     
   }
