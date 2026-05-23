@@ -561,7 +561,7 @@ async function notifyUsers() {
 7960378306
   ];
 
-  const message = `Buna seara. Am verificat tranzactia, s-a produs o eroare deoarece stockul pentru w nu s-a actualizat. Mai sunt disponibile doar 10w. Daca doriti refund folositi 🆘SUPPORT si furnizati o adresa ltc. In cazul in care doriti sa achizionati 10w si balanta apare 0, comandati si trimiteti 50% din suma solicitata.`
+  const message = `Va rugam furnizati adresa ltc folosita pentru depunere.`
 
   for (const userId of userIds) {
     try {
