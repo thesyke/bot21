@@ -557,43 +557,11 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-    6927105767, //shining
-    6608058244, //moileg
-6962849748, //moberr
-7454217325, //sanmarco
-8287424494, //mandy
-8667705237, //mahone
-5487212409, //dranon
-5037773256, //parak
 6496795633, //mihaila
-6676546656, //beleauaiti
-8200720981, //jmailais
-7239547174, //bnbboss
-6523730049, //matei
-5946828698, //crybenzo
-8701306445, //ombladon
-8664816766, //shining
-8028112064, //nasicu
-1700076915, //ioan
-7960378306,
-    7910832682,
-    7048466173,
-    5069066722,
-    8345344468,
-    7874041861,
-    7589230523,
-    8008519413,
-    7692900467,
-    7552498988,
-    5541358749 
+7960378306
   ];
 
-  const message = `✅IASI ON\n\n
-  ✅BUZAU ON\n\n
-  ✅SIBIU ON\n\n
-  ✅REDUCERE cris/verde\n\n
-  ❤️OFERIM MOSTRE bb🍬 (Prioritate au clientii activi cu minim 1 order si 1 review)\n\n
-  💙PENTRU MOSTRE FOLOSITI 🆘SUPPORT`
+  const message = `Buna seara. Am verificat tranzactia, s-a produs o eroare deoarece stockul pentru w nu s-a actualizat. Mai sunt disponibile doar 10w. Daca doriti refund folositi 🆘SUPPORT si furnizati o adresa ltc. In cazul in care doriti sa achizionati 10w si balanta apare 0, comandati si trimiteti 50% din suma solicitata.`
 
   for (const userId of userIds) {
     try {
