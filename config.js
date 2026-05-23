@@ -26,7 +26,7 @@ export const CATALOG = {
     label: "Iași",
     enabled: true,
     products: {
-      wd: { label: "verde", prices: { 5: 50 } },
+      wd: { label: "verde", prices: { 10: 100 } },
       cris: { label: "cris", prices: { 1: 35, 2: 70 } }
     }
   },
