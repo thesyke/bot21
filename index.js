@@ -578,9 +578,7 @@ async function notifyUsers() {
 7960378306
   ];
 
-  const message = `Buna seara\n\n ✅@florin113\n\n 👤ID 6496795633\n\n ORDER #bs28175\n\n Tranzactia dumneavoastra nu fost inregistrata de sistem, Va rugam sa furnizati metodata de plata:
-  Binance/ATM/p2p/Wallet\n\n (este posibi ca adresa sa fi expirat-autodelete. Vom face o scanare a adreselor detinute de noi pe blockchain, In cazul in care sunteti 100% sigur ca ati trimis la o adresa detinuta de noi va recomandam: sa va asigurati ca niciun dizpotiv necunoscut foloseste contul dvs de telegram\n\n
-  Revenim cu actualizarea 💰BALANTEI in contul dvs🔜`
+  const message = `✅Balance has been updated`
 
   for (const userId of userIds) {
     try {
