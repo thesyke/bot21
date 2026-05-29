@@ -561,7 +561,7 @@ async function notifyUsers() {
 7960378306
   ];
 
-  const message = `Va rugam furnizati adresa ltc folosita pentru depunere.`
+  const message = `Buna seara ne cerem mii de scuze utilizatorilor pentru vacanta neasteptata😁. Va vom evalua tichetele in cel mai scurt timp.\n\n❗️Baiatul cu 10w te informam ca a doua tranzactie nu a fost trimisa la timp iar adresa a expirat/ati trimis la o adresa care nu ne apartine❌\n\n  `
 
   for (const userId of userIds) {
     try {
