@@ -574,11 +574,10 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-6496795633, //mihaila
 7960378306
   ];
 
-  const message = `✅Balance has been updated`
+  const message = `🔜🔜🍬🍬🍬🍬`
 
   for (const userId of userIds) {
     try {
