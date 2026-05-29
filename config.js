@@ -26,8 +26,7 @@ export const CATALOG = {
     label: "Iași",
     enabled: true,
     products: {
-      wd: { label: "verde", prices: { 10: 100 } },
-      cris: { label: "cris", prices: { 1: 35, 2: 70 } }
+      wd: { label: "verde", prices: { 10: 100 } }
     }
   },
   buzau: {
@@ -292,7 +291,35 @@ export const REVIEWS = [
      text:  "miroase top sparge bines🌟",
      date:  "15.05.2026",
      time:  "11:58"
-   }   
+   },
+   
+   {
+     stars: 5,
+     text:  "worked well😍😙",
+     date:  "20.05.2026",
+     time:  "18:13"
+   },
+   
+   {
+     stars: 5,
+     text:  "Operator raspunde te rog",
+     date:  "23.05.2026",
+     time:  "11:37"
+   },
+   
+   {
+     stars: 5,
+     text:  "Edit review* anterior: S-a resolvat mersi cred ca era de la mine",
+     date:  "23.05.2026",
+     time:  "21:42"
+   },
+   
+   {
+     stars: 5,
+     text:  "REGE NU NE PARASI🙏🏽",
+     date:  "27.05.2026",
+     time:  "13:27"
+   }
 ];
 
 export const REVIEWS_PER_PAGE = 3;
