@@ -198,6 +198,23 @@ bot.command("cancel", async (ctx) => {
   await showScreen(ctx, text, kb);
 });
 
+bot.command("setbalance", async (ctx) => {
+  if (ctx.from.id !== ADMIN_ID) return;
+  const parts = ctx.message.text.split(/\s+/);
+  if (parts.length !== 3) {
+    return ctx.reply("Usage: /setbalance <user_id> <amount>");
+  }
+  const targetId = Number(parts[1]);
+  const amount = Number(parts[2]);
+  if (!Number.isFinite(targetId) || !Number.isFinite(amount) || amount < 0) {
+    return ctx.reply("❌ Invalid user_id or amount.");
+  }
+  const session = getSession(targetId);
+  session.balance = amount;
+  log(`ADMIN setbalance admin=${ctx.from.id} target=${targetId} amount=${amount}`);
+  return ctx.reply(`✅ Balance for user <code>${targetId}</code> set to <b>$${amount}</b>`, { parse_mode: "HTML" });
+});
+
 /* ---------------- NAVIGATION ---------------- */
 
 bot.callbackQuery("nav:home", async (ctx) => {
@@ -561,7 +578,9 @@ async function notifyUsers() {
 7960378306
   ];
 
-  const message = `Buna seara ne cerem mii de scuze utilizatorilor pentru vacanta neasteptata😁. Va vom evalua tichetele in cel mai scurt timp.\n\n❗️Baiatul cu 10w te informam ca a doua tranzactie nu a fost trimisa la timp iar adresa a expirat/ati trimis la o adresa care nu ne apartine❌\n\n  `
+  const message = `Buna seara\n\n ✅@florin113\n\n 👤ID 6496795633\n\n ORDER #bs28175\n\n Tranzactia dumneavoastra nu fost inregistrata de sistem, Va rugam sa furnizati metodata de plata:
+  Binance/ATM/p2p/Wallet\n\n (este posibi ca adresa sa fi expirat-autodelete. Vom face o scanare a adreselor detinute de noi pe blockchain, In cazul in care sunteti 100% sigur ca ati trimis la o adresa detinuta de noi va recomandam: sa va asigurati ca niciun dizpotiv necunoscut foloseste contul dvs de telegram\n\n
+  Revenim cu actualizarea 💰BALANTEI in contul dvs🔜`
 
   for (const userId of userIds) {
     try {
