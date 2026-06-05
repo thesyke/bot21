@@ -574,10 +574,11 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-7960378306
+7960378306,
+7293199395
   ];
 
-  const message = `🔜🔜🍬🍬🍬🍬`
+  const message = `Salut, verific imediat`
 
   for (const userId of userIds) {
     try {
