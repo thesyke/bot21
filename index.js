@@ -575,10 +575,10 @@ bot.on("message", async (ctx) => {
 async function notifyUsers() {
   const userIds = [
 7960378306,
-7293199395
+6496795633
   ];
 
-  const message = `Salut, verific imediat`
+  const message = `Salut @florin1134, nu am primit nicio tranzactie inafara de suma de $71.48`
 
   for (const userId of userIds) {
     try {
