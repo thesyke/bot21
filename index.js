@@ -575,10 +575,11 @@ bot.on("message", async (ctx) => {
 async function notifyUsers() {
   const userIds = [
 7960378306,
-5487212409
+6496795633
+
   ];
 
-  const message = `Salut, botul accepta doar ltc. In cazul in care doriti sa achitati cu XMR folositi 🆘SUPPORT si confirmati`
+  const message = `Salut, verificam imediat`
 
   for (const userId of userIds) {
     try {
