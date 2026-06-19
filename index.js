@@ -579,7 +579,7 @@ async function notifyUsers() {
 
   ];
 
-  const message = `Salut, verificam imediat`
+  const message = `Tranzactia apare in retea dar botul este instabil va rugam contactati @TrageVerde`
 
   for (const userId of userIds) {
     try {
