@@ -575,11 +575,11 @@ bot.on("message", async (ctx) => {
 async function notifyUsers() {
   const userIds = [
 7960378306,
-6496795633
+5487212409
 
   ];
 
-  const message = `Tranzactia apare in retea dar botul este instabil va rugam contactati @TrageVerde`
+  const message = `Salutare! Am avut niste probleme tehnice, in cazul in care mai doriti top up la balance prin XMR, aveti la dispozitie urmatoarea adresa 8BqUMM5YuMtEXVvyMTcduSNreX6mnSG29gf1athZtQqWZ1kFt29TNgpNfccCDGvDSAUsmUrjeLyLHNeqLmxGaaPyRiDZ8LF. Tranzactia poate dura in jur de 2 ore deoarece trebuie verificata manual.`
 
   for (const userId of userIds) {
     try {
