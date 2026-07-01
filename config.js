@@ -26,7 +26,7 @@ export const CATALOG = {
     label: "Iași",
     enabled: true,
     products: {
-      wd: { label: "verde", prices: {10: 98 } }
+      wd: { label: "verde", prices: { 5: 60, 10: 98 } }
     }
   },
   buzau: {
@@ -313,12 +313,102 @@ export const REVIEWS = [
      time:  "21:42"
    },
    
-   {
-     stars: 5,
-     text:  "REGE NU NE PARASI🙏🏽",
-     date:  "27.05.2026",
-     time:  "13:27"
-   }
+  {
+    stars: 5,
+    text: "Foarte buna ",
+    date: "31.05.2026",
+    time: "17:35"
+  },
+  {
+    stars: 5,
+    text: "Ba chiar e ok.",
+    date: "02.06.2026",
+    time: "11:18"
+  },
+  {
+    stars: 5,
+    text: "Top rau 🔥",
+    date: "04.06.2026",
+    time: "20:42"
+  },
+  {
+    stars: 5,
+    text: "Mersi boss 🤝",
+    date: "06.06.2026",
+    time: "09:56"
+  },
+  {
+    stars: 5,
+    text: "Frt e ce trebuie.",
+    date: "08.06.2026",
+    time: "14:23"
+  },
+  {
+    stars: 5,
+    text: "Calitate buna.",
+    date: "10.06.2026",
+    time: "18:37"
+  },
+  {
+    stars: 3,
+    text: "un ghid de consum ceva?",
+    date: "13.06.2026",
+    time: "12:11"
+  },
+  {
+    stars: 5,
+    text: "N-am ce comenta.",
+    date: "16.06.2026",
+    time: "21:49"
+  },
+  {
+    stars: 5,
+    text: "Respect ✌️",
+    date: "18.06.2026",
+    time: "10:15"
+  },
+  {
+    stars: 5,
+    text: "Merge blana.",
+    date: "20.06.2026",
+    time: "16:08"
+  },
+  {
+    stars: 5,
+    text: "Doamne ajuta ❤️",
+    date: "22.06.2026",
+    time: "08:54"
+  },
+  {
+    stars: 5,
+    text: "Am mai luat odata.",
+    date: "24.06.2026",
+    time: "19:27"
+  },
+  {
+    stars: 5,
+    text: "No, ii buna.",
+    date: "26.06.2026",
+    time: "13:44"
+  },
+  {
+    stars: 5,
+    text: "10/10.",
+    date: "28.06.2026",
+    time: "22:03"
+  },
+  {
+  stars: 5,
+  text: "rwxomand👌",
+  date: "30.06.2026",
+  time: "09:51"
+},
+{
+  stars: 5,
+  text: "Welcome back king🆘🆘🆘🆘",
+  date: "13.06.2026",
+  time: "14:46"
+}
 ];
 
 export const REVIEWS_PER_PAGE = 3;
