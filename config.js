@@ -18,7 +18,7 @@ export const CATALOG = {
     label: "Ploiești",
     enabled: true,
     products: {
-      wd: { label: "verde", prices: { 5: 50, 10: 90 } },
+      wd: { label: "verde", prices: { 5: 60, 10: 110 } },
       cx: { label: "cx", prices: { 2: 190 } }
     }
   },
@@ -26,15 +26,15 @@ export const CATALOG = {
     label: "Iași",
     enabled: true,
     products: {
-      wd: { label: "verde", prices: { 5: 60  } },
-      cris: { label: "cris", prices: { 5: 80, 10: 120 } }
+      wd: { label: "verde", prices: { 5: 60, 10: 110} },
+      cris: { label: "cris", prices: { 5: 110 } }
     }
   },
   buzau: {
     label: "Buzău",
     enabled: true,
     products: {
-       wd: { label: "verde", prices: {5: 50 } },
+       wd: { label: "verde", prices: {5: 60 } },
        cris: { label: "cris", prices: {1: 35 } }
     }
     },
@@ -51,7 +51,7 @@ export const CATALOG = {
     label: "Bucureşti",
     enabled: true,
     products: {
-       wd: { label: "verde", prices: { 5: 50 } },
+       wd: { label: "verde", prices: { 5: 60, 110 } },
        cris: { label: "cris", prices: { 1: 35, 2: 70 } }
     }
    },
@@ -60,7 +60,7 @@ export const CATALOG = {
     label: "Sibiu",
     enabled: true,
     products: {
-       wd: { label: "verde", prices: { 5: 50, 10: 90 } },
+       wd: { label: "verde", prices: { 5: 50, 10: 110 } },
        cris: { label: "cris", prices: { 1: 35, 2: 70 } }
     }
       },
@@ -69,7 +69,7 @@ export const CATALOG = {
     label: "Cluj",
     enabled: true,
     products: {
-       wd: { label: "verde", prices: { 5: 50, 10: 90 } },
+       wd: { label: "verde", prices: { 5: 60, 10: 110 } },
        cris: { label: "cris", prices: { 1: 35, 2: 70 } }
     }
   }
