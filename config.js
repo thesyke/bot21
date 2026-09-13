@@ -51,7 +51,7 @@ export const CATALOG = {
     label: "Bucureşti",
     enabled: true,
     products: {
-       wd: { label: "verde", prices: { 5: 60, 110 } },
+       wd: { label: "verde", prices: { 5: 60 } },
        cris: { label: "cris", prices: { 1: 35, 2: 70 } }
     }
    },
