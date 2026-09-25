@@ -15,7 +15,7 @@ const HOME_BTN = { text: "🏠 Acasă", callback_data: "nav:home" };
 
 export function home() {
   return {
-    text: "📍 <b>🎉 Bun venit in magazinul nostru! 🛍️</b>\n\n 💬 Așteptăm comenzile dumneavoastră și vă dorim cumpărături plăcute! 🎉\n\n Ratingul magazinului: ⭐ 4.4/5 (1362 buc.):",
+    text: "📍 <b>🎉 Bun venit in magazinul nostru! 🛍️</b>\n\n 💬Așteptăm comenzile dumneavoastră și vă dorim cumpărături plăcute! 🎉\n\n Ratingul magazinului: ⭐ 4.4/5 (1362 buc.):",
     kb: {
   inline_keyboard: [
     [{ text: "👤 Profil", callback_data: "nav:profile" }],
