@@ -23,7 +23,7 @@ export function home() {
     [{ text: "📜 Reguli", callback_data: "nav:rules" }],
 
     [
-      { text: "SUPPORT", callback_data: "nav:support" }
+      { text: "✅ SUPPORT", callback_data: "nav:support" }
     ]
   ]
 }
@@ -59,7 +59,7 @@ Pentru a te asigura ca totul decurge bine si ca nu ai probleme, te rugam sa urme
 
 <b> NU GASESC DROPUL, CE FAC? </b>
 
-Trimite folosind butonul 🆘<b>SUPPORT</b> urmatoarele informatii:
+Trimite folosind butonul ✅<b>SUPPORT</b> urmatoarele informatii:
 
 1. Poza cu dropul din bot
 2. Video realizat <b>INAINTE</b> de a ajunge la drop
