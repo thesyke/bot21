@@ -574,11 +574,11 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-7960378306,
-
+8068423292,
+7960378306
   ];
 
-  const message = `leme tehnice, in cazul in care mai doriti top up la balance prin XMR, aveti la dispozitie urmatoarea adresa 8BqUMM5YuMtEXVvyMTcduSNreX6mnSG29gf1athZtQqWZ1kFt29TNgpNfccCDGvDSAUsmUrjeLyLHNeqLmxGaaPyRiDZ8LF. Tranzactia poate dura in jur de 2 ore deoarece trebuie verificata manual.`
+  const message = `Salut scrie mesaj pe support produsul(H/mf/cx) cantitatea si orasul`
 
   for (const userId of userIds) {
     try {
