@@ -423,12 +423,12 @@ await ctx.api.sendMessage(
     await ctx.replyWithPhoto(new InputFile(qrPng, "ltc.png"), {
       parse_mode: "HTML",
       caption:
-`<b>Detalii plată LTC:</b>
+`<b>Details:</b>
 
 <code>${address}</code>
 <b>${ltcAmount} LTC</b> (~${amount} USD)
 
-⏳ Ai 60 minute pentru a trimite suma.`
+Countdown: 30 minutes`
     });
 
   } catch (e) {
