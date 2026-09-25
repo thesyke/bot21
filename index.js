@@ -574,7 +574,6 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-8068423292,
 7960378306
   ];
 
