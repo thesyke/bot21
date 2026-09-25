@@ -253,18 +253,6 @@ export function depositAmountPrompt() {
   };
 }
 
-export function depositSubmitted(amount) {
-  return {
-    text:
-`✅ <b>Cerere de depozit creată</b>
-
-Suma: <b>${amount} USD</b>
-
-Detaliile de plată au fost trimise mai sus.`,
-    kb: { inline_keyboard: [[HOME_BTN]] }
-  };
-}
-
 export function supportConfirm() {
   return {
     text:
