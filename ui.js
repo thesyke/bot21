@@ -27,7 +27,6 @@ export function home() {
     ],
 
     [
-      { text: "⭐ Recenzii", callback_data: "nav:reviews" },
       { text: "🆘 SUPPORT", callback_data: "nav:support" }
     ]
   ]
@@ -40,7 +39,7 @@ export function profile(ctx, session) {
     ? `@${escapeHtml(ctx.from.username)}`
     : escapeHtml(ctx.from.first_name || "User");
 
-  const referralLink = `https://t.me/verdenovabot?start=${ctx.from.id}`;
+  const referralLink = `https://t.me/@mgkkk_robot?start=${ctx.from.id}`;
 
   return {
     text:
