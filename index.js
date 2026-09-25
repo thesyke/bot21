@@ -578,7 +578,7 @@ async function notifyUsers() {
 7960378306
   ];
 
-  const message = `Salut scrie mesaj pe support produsul(H/mf/cx) cantitatea si orasul`
+  const message = `Trimite @ ul userului care a recomandat. Minim 3g 4Ⓜ️Ⓜ️C $98 daca doresti azi comunica cat mai repede.`
 
   for (const userId of userIds) {
     try {
