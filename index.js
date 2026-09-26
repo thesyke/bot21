@@ -574,10 +574,11 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-7960378306
+7960378306,
+8068423292
   ];
 
-  const message = `Trimite @ ul userului care a recomandat. Minim 3g 4Ⓜ️Ⓜ️C $98 daca doresti azi comunica cat mai repede.`
+  const message = `BUZAU ON ✅`
 
   for (const userId of userIds) {
     try {
