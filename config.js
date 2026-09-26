@@ -33,8 +33,8 @@ export const CATALOG = {
     label: "Buzău",
     enabled: true,
     products: {
-       wd: { label: "H", prices: {5: 60 } },
-       cris: { label: "MEFE", prices: {5: 90 } }
+       wd: { label: "H", prices: {5: 60, 10: 110 } },
+       cris: { label: "MEFE", prices: {5: 110, 10: 170 } }
     }
     },
    timisoara: {
