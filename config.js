@@ -26,8 +26,8 @@ export const CATALOG = {
     label: "Iași",
     enabled: true,
     products: {
-      wd: { label: "H", prices: { 10: 110 } },
-      cris: { label: "MEFE", prices: { 5: 110 } }
+      wd: { label: "H", prices: { 5: 60, 10: 110 } },
+      cris: { label: "MEFE", prices: { 2: 60, 5: 110 } }
     }
   },
   buzau: {
@@ -51,8 +51,8 @@ export const CATALOG = {
     label: "Bucureşti",
     enabled: true,
     products: {
-       wd: { label: "H", prices: { 5: 60 } },
-       cris: { label: "MEFE", prices: { 1: 35, 5: 90 } }
+       wd: { label: "H", prices: { 5: 60, 10: 110} },
+       cris: { label: "MEFE", prices: { 1: 35, 5: 110 } }
     }
    },
     
