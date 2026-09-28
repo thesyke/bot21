@@ -578,7 +578,7 @@ async function notifyUsers() {
 8068423292
   ];
 
-  const message = `IASI ON ✅`
+  const message = `BUCURESTI ON ✅`
 
   for (const userId of userIds) {
     try {
