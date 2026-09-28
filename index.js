@@ -574,7 +574,8 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-7960378306
+7960378306,
+8068423292
   ];
 
   const message = `IASI ON ✅`
