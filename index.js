@@ -574,11 +574,10 @@ bot.on("message", async (ctx) => {
 
 async function notifyUsers() {
   const userIds = [
-7960378306,
-8068423292
+7960378306
   ];
 
-  const message = `BUZAU ON ✅`
+  const message = `IASI ON ✅`
 
   for (const userId of userIds) {
     try {
