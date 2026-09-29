@@ -575,9 +575,10 @@ bot.on("message", async (ctx) => {
 async function notifyUsers() {
   const userIds = [
 7960378306,
+8068423292
   ];
 
-  const message = `Salut in cazul in care dureaza mai mult de 30 minute veti primi top-up pe balanta. De asemenea luati in calcul faptul ca dropurile mici se dau rapid  `
+  const message = `Salut in cazul in care dureaza mai mult de 30 minute de la achizitie veti primi top-up pe balanta. De asemenea luati in calcul faptul ca dropurile mici se dau rapid  `
   for (const userId of userIds) {
     try {
       await bot.api.sendMessage(userId, message);
