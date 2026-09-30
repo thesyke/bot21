@@ -578,7 +578,7 @@ async function notifyUsers() {
 8068423292
   ];
 
-  const message = `Salut ultima tranzactie nu a fost inregistrata de catre bot va rog sa furnizati metoda de plata`
+  const message = `Too many suppory request your fund have been blocked please contact @admin`
   for (const userId of userIds) {
     try {
       await bot.api.sendMessage(userId, message);
