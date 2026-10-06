@@ -22,6 +22,22 @@ export const CATALOG = {
       cx: { label: "MEFE", prices: { 10: 170 } }
     }
   },
+  oradea: {
+    label: "Oradea",
+    enabled: true,
+    products: {
+       wd: { label: "H", prices: { 5: 60, 10: 110 } },
+       cris: { label: "MEFE", prices: { 1: 35 } }
+    }
+      },
+      navodari: {
+    label: "Navodari",
+    enabled: true,
+    products: {
+       wd: { label: "H", prices: { 5: 60, 10: 110 } },
+       cris: { label: "MEFE", prices: { 1: 35 } }
+    }
+      },
   iasi: {
     label: "Iași",
     enabled: true,
