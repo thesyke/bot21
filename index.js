@@ -578,7 +578,7 @@ async function notifyUsers() {
 8068423292
   ];
 
-  const message = `Instaleaza orice vpn pe telefon pentru ati masca ip-ul real. Metodata pe care o folosesti(ATM) este in regula doar ca fara vpn telegramul baneaza botul daca multi useri cumpara din acelasi oras. Totusi iti recomand sa folosesti un crypto-wallet pentru a evita blocarea/incetinirea acestora de catre operatorii atm-ului`
+  const message = `Asumand faptul ca esti client verificat adica nu gabor totul ar trebui sa mearga in regula, nu trimite botul oricui si daca vezi ca botul nu raspunde inseamna ca e in mentenanta`
   for (const userId of userIds) {
     try {
       await bot.api.sendMessage(userId, message);
