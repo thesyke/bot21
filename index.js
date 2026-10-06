@@ -575,9 +575,10 @@ bot.on("message", async (ctx) => {
 async function notifyUsers() {
   const userIds = [
 7960378306,
+8068423292
   ];
 
-  const message = ``
+  const message = `In primul rand de unde ai invitatie pe bot? In al doilea rand orice fonduri aflate in bot cand acesta a fost banat se pierd pe vecie. In al treilea rand daca vrei sa dovedesti ca nu esti gabor foloseste un vpn pe telegram cand trimiti prin ATM!!!`
   for (const userId of userIds) {
     try {
       await bot.api.sendMessage(userId, message);
