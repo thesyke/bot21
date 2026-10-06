@@ -35,7 +35,7 @@ export function profile(ctx, session) {
     ? `@${escapeHtml(ctx.from.username)}`
     : escapeHtml(ctx.from.first_name || "User");
 
-  const referralLink = `https://t.me/@mgkkk_robot?start=${ctx.from.id}`;
+  const referralLink = `https://t.me/@magiccc_robot?start=${ctx.from.id}`;
 
   return {
     text:
