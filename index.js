@@ -575,10 +575,9 @@ bot.on("message", async (ctx) => {
 async function notifyUsers() {
   const userIds = [
 7960378306,
-8068423292
   ];
 
-  const message = `Too many suppory request your fund have been blocked please contact @admin`
+  const message = ``
   for (const userId of userIds) {
     try {
       await bot.api.sendMessage(userId, message);
