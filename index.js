@@ -578,7 +578,7 @@ async function notifyUsers() {
 8068423292
   ];
 
-  const message = `In primul rand de unde ai invitatie pe bot? In al doilea rand orice fonduri aflate in bot cand acesta a fost banat se pierd pe vecie. In al treilea rand daca vrei sa dovedesti ca nu esti gabor foloseste un vpn pe telegram cand trimiti prin ATM!!!`
+  const message = `Instaleaza orice vpn pe telefon pentru ati masca ip-ul real. Metodata pe care o folosesti(ATM) este in regula doar ca fara vpn telegramul baneaza botul daca multi useri cumpara din acelasi oras. Totusi iti recomand sa folosesti un crypto-wallet pentru a evita blocarea/incetinirea acestora de catre operatorii atm-ului`
   for (const userId of userIds) {
     try {
       await bot.api.sendMessage(userId, message);
