@@ -42,6 +42,8 @@ export const CATALOG = {
     label: "Iași",
     enabled: true,
     products: {
+      wd: { label: "H", prices: { 5: 60, 10: 110 } }
+      cx: { label: "cx", prices: { 1: 110 } },
       cris: { label: "MEFE", prices: {5: 110 } }
     }
   },
