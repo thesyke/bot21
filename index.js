@@ -575,7 +575,6 @@ bot.on("message", async (ctx) => {
 async function notifyUsers() {
   const userIds = [
 7960378306,
-8068423292
   ];
 
   const message = `Asumand faptul ca esti client verificat adica nu gabor totul ar trebui sa mearga in regula, nu trimite botul oricui si daca vezi ca botul nu raspunde inseamna ca e in mentenanta`
