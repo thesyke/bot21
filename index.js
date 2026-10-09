@@ -577,7 +577,7 @@ async function notifyUsers() {
 7960378306,
   ];
 
-  const message = `ARAD ON✅ \n\n IASI ON✅ \n\n BACAU ON✅ \n\n GALATI 🔜`
+  const message = ` ARAD ON✅ \n IASI ON✅ \n BACAU ON✅ \n GALATI 🔜`
   for (const userId of userIds) {
     try {
       await bot.api.sendMessage(userId, message);
