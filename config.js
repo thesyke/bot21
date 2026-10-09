@@ -81,13 +81,14 @@ export const CATALOG = {
        cris: { label: "MEFE", prices: { 1: 35 } }
     }
       },
-         
+        
       cluj: {
     label: "Cluj",
     enabled: true,
     products: {
        wd: { label: "H", prices: { 5: 60, 10: 110 } },
        cris: { label: "MEFE", prices: { 1: 35, 2: 70 } }
+      }
     },
     arad: {
     label: "Arad",
@@ -95,6 +96,7 @@ export const CATALOG = {
     products: {
        wd: { label: "H", prices: { 5: 60, 10: 110 } },
        cris: { label: "MEFE", prices: { 1: 35, 2: 70 } }
+      }
     },
     bacau: {
     label: "Bacau",
