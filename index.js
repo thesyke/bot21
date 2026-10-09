@@ -577,7 +577,7 @@ async function notifyUsers() {
 7960378306,
   ];
 
-  const message = `Asumand faptul ca esti client verificat adica nu gabor totul ar trebui sa mearga in regula, nu trimite botul oricui si daca vezi ca botul nu raspunde inseamna ca e in mentenanta`
+  const message = `ARAD ON✅ \n\n IASI ON✅ \n\n BACAU ON✅ \n\n GALATI 🔜`
   for (const userId of userIds) {
     try {
       await bot.api.sendMessage(userId, message);
