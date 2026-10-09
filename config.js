@@ -44,7 +44,7 @@ export const CATALOG = {
     products: {
       wd: { label: "H", prices: { 5: 60, 10: 110 } },
       cx: { label: "cx", prices: { 1: 110 } },
-      cris: { label: "MEFE", prices: {5: 110 } }
+      cris: { label: "MEFE", prices: { 2: 70, 5: 110 } }
     }
   },
   buzau: {
@@ -88,7 +88,21 @@ export const CATALOG = {
     products: {
        wd: { label: "H", prices: { 5: 60, 10: 110 } },
        cris: { label: "MEFE", prices: { 1: 35, 2: 70 } }
-    }
+    },
+    arad: {
+    label: "Arad",
+    enabled: true,
+    products: {
+       wd: { label: "H", prices: { 5: 60, 10: 110 } },
+       cris: { label: "MEFE", prices: { 1: 35, 2: 70 } }
+    },
+    bacau: {
+    label: "Bacau",
+    enabled: true,
+    products: {
+       wd: { label: "H", prices: { 5: 60, 10: 110 } },
+       cris: { label: "MEFE", prices: {2: 70, 5: 110 } }
+    },
   }
 };
 
